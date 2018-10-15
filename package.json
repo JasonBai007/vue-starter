@@ -7,6 +7,8 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "element-ui": "^2.4.8",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
@@ -16,6 +18,7 @@
     "@vue/cli-service": "^3.0.5",
     "less": "^3.0.4",
     "less-loader": "^4.1.0",
+    "open-browser-webpack-plugin": "^0.0.5",
     "vue-template-compiler": "^2.5.17"
   }
 }
