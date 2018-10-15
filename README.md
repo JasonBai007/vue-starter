@@ -15,12 +15,13 @@ yarn run serve
 yarn run build
 ```
 
-### Run your tests
+### Preview your dist files
 ```
-yarn run test
+cd dist
+http-server
 ```
 
-### Lints and fixes files
+### Stop your local httpserver
 ```
-yarn run lint
+Ctrl + C
 ```
