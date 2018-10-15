@@ -8,31 +8,30 @@ PM: 黄忠
 FE：鲁班七号、铠、蔡文姬  
 BE：大乔、老夫子
 
+## Useful links
+产品文档：  
+接口文档：  
+仓库地址：
+
 ## How to use
-### Install dependencies
-```
+
+``` bash
+# install dependencies
 yarn install
-```
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
+# serve with hot reload at localhost:8080
+yarn run dev
 
-### Compiles and minifies for production
-```
+# build for production with minification
 yarn run build
-```
 
-### Preview your dist files
-```
+# Preview your dist files
 cd dist
 http-server
-```
 
-### Stop your local http server
-```
+# Stop your local http server
 Ctrl + C
+
 ```
 
 ## Tech stack
@@ -46,3 +45,7 @@ Ctrl + C
 * Less
 * MockJS
 * Yarn
+
+## Notes
+1. 使用前，确保已安装了最新版的第三方组件库。
+2. 使用前，请先仔细阅读Readme文档并完善上面的必要信息。
