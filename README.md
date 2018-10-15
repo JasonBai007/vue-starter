@@ -26,12 +26,15 @@ yarn run dev
 # build for production with minification
 yarn run build
 
-# Preview your dist files
+# preview your dist files
 cd dist
 http-server
 
-# Stop your local http server
+# stop your local http server
 Ctrl + C
+
+# analysis your dist files
+yarn run analysis
 
 ```
 
