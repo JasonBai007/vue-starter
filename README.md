@@ -55,3 +55,4 @@ yarn run analysis
 2. 使用前，请先仔细阅读Readme文档并完善上面的必要信息。
 3. 如需修改webpack配置，请修改vue.config.js文件。
 4. 查看并输出webpack配置，在项目根目录执行：vue inspect > output.js
+5. 本项目，兼容IE9及以上。
