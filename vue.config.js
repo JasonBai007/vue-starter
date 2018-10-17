@@ -11,8 +11,8 @@ module.exports = {
     open: true, // 配置自动启动浏览器
     // 配置代理
     proxy: {
-      '/api/v1': {
-        target: 'http://xxxx:8888/',
+      'v2': {
+        target: 'http://api.douban.com/',
         changeOrigin: true
       }
     }

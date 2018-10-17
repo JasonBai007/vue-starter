@@ -5,8 +5,8 @@ a fast starter-kit for vue projects.
 
 ## Team members
 PM: 黄忠  
-FE：鲁班七号、铠、蔡文姬  
-BE：大乔、老夫子
+FE：鲁班七号、蔡文姬  
+BE：甄姬、亚瑟
 
 ## Useful links
 vue/cli：[https://cli.vuejs.org/zh/guide/webpack.html](https://cli.vuejs.org/zh/guide/webpack.html)  
