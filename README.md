@@ -46,7 +46,7 @@ yarn run analysis
 * ES6
 * Axios
 * Element-UI @ 2.4.8
-* Less
+* Sass
 * MockJS
 * Yarn
 
@@ -56,3 +56,5 @@ yarn run analysis
 3. 如需修改webpack配置，请修改vue.config.js文件。
 4. 查看并输出webpack配置，在项目根目录执行：vue inspect > output.js
 5. 本项目，兼容IE9及以上。
+6. 为了后期可能会全局改变饿了么的样式，所以CSS预处理器换成了Sass。
+7. assets/css/element-variables.scss 全局覆盖饿了么的样式。

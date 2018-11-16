@@ -27,7 +27,7 @@ export default {
   }
 };
 </script>
-<style lang="less" scoped>
+<style lang="scss" scoped>
 p {
   word-break: break-all;
   color: #999;
