@@ -1,6 +1,7 @@
 <template>
   <div>
-    <div :id="randomId" style="width: 600px;height:400px;"></div>  
+    <div v-if="isEmpty">暂无数据</div>  
+    <div v-else :id="randomId" style="width: 600px;height:400px;"></div>
   </div>
 </template>
 
@@ -16,9 +17,14 @@ export default {
     options: Object
   },
   data() {
-    return {};
+    return {
+      isEmpty: false //默认数据不为空
+    };
   },
   computed: {
+    myChart() {
+      return echarts.init(document.getElementById(this.randomId));
+    },
     randomId() {
       return `ID${new Date().getTime()}`;
     }
@@ -29,9 +35,11 @@ export default {
   },
   methods: {
     renderChart(opts) {
-      const myChart = echarts.init(document.getElementById(this.randomId));
-      if (opts) {
-        myChart.setOption(opts);
+      if (opts && opts.series.length > 0) {
+        this.isEmpty = false;
+        this.myChart.setOption(opts);
+      } else {
+        this.isEmpty = true;
       }
     }
   },
