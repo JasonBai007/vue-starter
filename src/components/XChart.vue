@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="chart-wrap">
     <div v-if="isEmpty">暂无数据</div>  
-    <div v-else :id="randomId" style="width: 600px;height:400px;"></div>
+    <div v-else :id="randomId" style="height:400px;"></div>
   </div>
 </template>
 
@@ -26,12 +26,20 @@ export default {
       return echarts.init(document.getElementById(this.randomId));
     },
     randomId() {
-      return `ID${new Date().getTime()}`;
+      return `ID${new Date().getTime()}${Math.random() * 1000}`;
     }
   },
   mounted() {
     // 初始第一次渲染图表
     this.renderChart(this.options);
+    window.addEventListener("resize", () => {
+      this.myChart.resize({
+        width: window.getComputedStyle(
+          document.querySelector(".chart-wrap"),
+          null
+        ).width
+      });
+    });
   },
   methods: {
     renderChart(opts) {
@@ -54,3 +62,8 @@ export default {
   }
 };
 </script>
+<style lang="scss" scoped>
+.chart-wrap {
+  width: 100%;
+}
+</style>

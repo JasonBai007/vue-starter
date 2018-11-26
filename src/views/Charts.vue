@@ -1,8 +1,11 @@
 <template>
   <div>
     <button @click="fresh">刷新</button>
-    <x-chart :options="options"></x-chart>
-    <x-chart :options="options"></x-chart>
+    <div class="wrap">
+      <div><x-chart :options="options"></x-chart></div>
+      <div><x-chart :options="options"></x-chart></div>
+      <div><x-chart :options="options"></x-chart></div>
+    </div>
   </div>
 </template>
 
@@ -46,3 +49,12 @@ export default {
   }
 };
 </script>
+<style lang="scss" scoped>
+.wrap {
+  display: flex;
+  justify-content: center;
+  & > div {
+    width: 33.333%;
+  }
+}
+</style>
