@@ -52,6 +52,7 @@ export default {
 <style lang="scss" scoped>
 .wrap {
   display: flex;
+  height: 380px;
   justify-content: center;
   & > div {
     width: 33.333%;
