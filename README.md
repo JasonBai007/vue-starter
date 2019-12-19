@@ -4,15 +4,15 @@
 a fast starter-kit for vue projects.
 
 ## Team members
-PM: 武则天  
+PM: 武则天 
+UI: 妲己 
 FE：鲁班七号、后裔  
 BE：东皇太一、亚瑟
 
 ## Useful links
-vue/cli：[https://cli.vuejs.org/zh/config/](https://cli.vuejs.org/zh/config/)  
-产品文档：  
-接口文档：  
-仓库地址：
+Vue-CLI：[https://cli.vuejs.org/zh/config/](https://cli.vuejs.org/zh/config/)  
+Product Docs：  
+API Docs：  
 
 ## How to use
 
