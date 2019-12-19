@@ -1,5 +1,5 @@
 # vue-starter
-a fast starter-kit for vue projects.
+Vue-starter is a powerful admin template built especially for front-end developers, it is user-friendly and straightforward, making it fast and simple to get started.
 
 ## Team members
 PM: 武则天  
