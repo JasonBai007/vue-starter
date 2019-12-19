@@ -12,6 +12,7 @@
     "core-js": "^3.4.3",
     "echarts": "^4.5.0",
     "element-ui": "^2.13.0",
+    "font-awesome": "^4.7.0",
     "jsonp": "^0.2.1",
     "mockjs": "^1.1.0",
     "vue": "^2.6.10",

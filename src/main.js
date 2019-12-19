@@ -1,21 +1,35 @@
-import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
-import store from './store'
-// 引入AXIOS
-import axios from 'axios'
-// 完整引入ElementUI
-import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
-// 引入饿了么全局样式覆盖文件
-import './assets/css/element-variables.scss'
-
+// The Vue build version to load with the `import` command
+// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
+// 必须在最开始引入垫片
+import "babel-polyfill";
+import Vue from "vue";
+import App from "./App";
+import router from "./router";
+import store from "./store";
+import http from "./http";
+import i18n from "./lang";
+// 引入全局工具函数
+import * as utils from "./utils";
+// 引入全局过滤器
+// import '@/filters'
+import "font-awesome/scss/font-awesome.scss";
+// 在入口处引入模拟的假数据
+import "@/mock";
+// 引入完整的饿了么组件库
+import ElementUI from "element-ui";
+import "element-ui/lib/theme-chalk/index.css";
+import "./assets/scss/element-variables.scss";
 Vue.use(ElementUI);
-
-Vue.config.productionTip = false
+// 将http绑定到vue原型上
+Vue.prototype.$http = http;
+// 将公共汽车绑定到vue原型上
+Vue.prototype.$bus = new Vue();
+// Vue 的全局配置
+Vue.config.productionTip = false;
 
 new Vue({
+  i18n,
   router,
   store,
   render: h => h(App)
-}).$mount('#app')
+}).$mount("#app");
