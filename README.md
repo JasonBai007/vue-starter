@@ -1,18 +1,16 @@
 # vue-starter
-
-## Profile
 a fast starter-kit for vue projects.
 
 ## Team members
-PM: 武则天 
-UI: 妲己 
+PM: 武则天  
+UI: 妲己  
 FE：鲁班七号、后裔  
 BE：东皇太一、亚瑟
 
 ## Useful links
-Vue-CLI：[https://cli.vuejs.org/zh/config/](https://cli.vuejs.org/zh/config/)  
+Vue-CLI Docs：[https://cli.vuejs.org/zh/config/](https://cli.vuejs.org/zh/config/)  
 Product Docs：  
-API Docs：  
+BackAPI Docs：  
 
 ## How to use
 
