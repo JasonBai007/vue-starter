@@ -20,8 +20,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.fa-language:hover {
-  transform: rotateY(180deg);
+.el-icon-s-operation {
+  font-weight: 600;
 }
 </style>
 

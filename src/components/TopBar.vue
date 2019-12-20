@@ -3,13 +3,13 @@
 <template>
   <div id="topbar-wrap" :class="{ topCollapsed: isCollapse }">
     <el-row type="flex" justify="space-between">
-      <el-col :span="6">
+      <el-col :span="12">
         <i class="el-icon-s-fold toggle-btn" :style="iconStyle"  @click="toggleSiderBar"></i>
         <campaign-select></campaign-select>
       </el-col>
       <el-col :span="12">
         <el-row type="flex" class="row-right" justify="end" style="margin-right:-15px" align="middle">
-          <el-col :span="5">
+          <el-col :span="18" class="hi">
             <a class="animated fadeIn">Hi，{{userName}}</a>
           </el-col>
           <el-col :span="2">
@@ -79,7 +79,7 @@ export default {
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
   a {
     line-height: 60px;
-  }
+  }  
   i {
     font-size: 20px;
     line-height: 60px;
@@ -101,5 +101,11 @@ export default {
 }
 .row-right > div {
   text-align: center;
+}
+.row-right > div.hi {
+  text-align: right;
+  a {
+    padding-right: 2%;
+  }
 }
 </style>
