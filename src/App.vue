@@ -34,7 +34,7 @@ body {
   color: #626262;
   margin: 0;
   padding: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", sans-serif;
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", sans-serif;
 }
 body #app {
   height: 100%;

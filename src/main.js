@@ -19,6 +19,7 @@ import "@/mock";
 import ElementUI from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 import "./assets/scss/element-variables.scss";
+import "@/assets/css/fonts.css";
 Vue.use(ElementUI);
 // 将http绑定到vue原型上
 Vue.prototype.$http = http;
