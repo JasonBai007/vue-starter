@@ -68,6 +68,7 @@ export default {
 </script>
 <style scoped lang="scss">
 #topbar-wrap {
+  position: relative;
   overflow: hidden;
   border-bottom: 1px solid #efefef;
   background: #fff;
@@ -75,6 +76,7 @@ export default {
   padding: 0 15px;
   z-index: 4;
   box-sizing: border-box;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
   a {
     line-height: 60px;
   }

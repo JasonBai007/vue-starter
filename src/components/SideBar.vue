@@ -67,7 +67,7 @@ export default {
   z-index: 5;
   transition: all 0.3s;
   background: #fff;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
   &.collapsed {
     width: 64px;
     transition: all 0.3s;
