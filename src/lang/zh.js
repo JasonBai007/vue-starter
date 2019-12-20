@@ -1,6 +1,6 @@
 export const m = {
   login: {
-    introduction: '销售洞察平台',
+    introduction: '新项目快速启动模板',
     name_holder: '用户名',
     password_holder: '密码',
     name_tip: '请输入用户名',

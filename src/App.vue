@@ -31,6 +31,7 @@ body {
 }
 
 body {
+  color: #626262;
   margin: 0;
   padding: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", sans-serif;
@@ -63,7 +64,6 @@ body #app {
 /* 登录页覆盖账号输入框样式 */
 .bg form .el-input__inner {
   background: transparent;
-  color: #fff;
   border: none;
   border-bottom: 1px solid #aaa;
   border-radius: 0;

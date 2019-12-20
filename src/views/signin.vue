@@ -1,25 +1,33 @@
 <template>
   <div class="bg">
     <div class="login-wrap animated fadeIn">
-      <h3>S I P</h3>
-      <p>{{$t('m.login.introduction')}}</p>
-      <el-form ref="form" :model="form" :rules="rules" label-width="0px">
-        <el-form-item prop="name">
-          <el-input :placeholder="$t('m.login.name_holder')" v-model="form.name" clearable></el-input>
-        </el-form-item>
-        <el-form-item prop="password">
-          <el-input :placeholder="$t('m.login.password_holder')" v-model="form.password" type="password" clearable></el-input>
-        </el-form-item>
-        <!-- <el-form-item>
+      <img src="../../static/img/login.png" class="left" />
+      <div class="right">
+        <h3>Vue Starter</h3>
+        <p>{{$t('m.login.introduction')}}</p>
+        <el-form ref="form" :model="form" :rules="rules" label-width="0px">
+          <el-form-item prop="name">
+            <el-input :placeholder="$t('m.login.name_holder')" v-model="form.name" clearable></el-input>
+          </el-form-item>
+          <el-form-item prop="password">
+            <el-input
+              :placeholder="$t('m.login.password_holder')"
+              v-model="form.password"
+              type="password"
+              clearable
+            ></el-input>
+          </el-form-item>
+          <!-- <el-form-item>
           <el-row type="flex" justify="space-between">
             <el-checkbox v-model="isMemery" style="color:#eee">{{$t('m.login.remember')}}</el-checkbox>
             <a href @click.prevent="openMsg" style="color:#eee">{{$t('m.login.forget')}}</a>
           </el-row>
-        </el-form-item>-->
-        <el-form-item>
-          <el-button type="primary" @click="Login('form')">{{$t('m.login.button')}}</el-button>
-        </el-form-item>
-      </el-form>
+          </el-form-item>-->
+          <el-form-item>
+            <el-button type="primary" @click="Login('form')">{{$t('m.login.button')}}</el-button>
+          </el-form-item>
+        </el-form>
+      </div>
     </div>
   </div>
 </template>
@@ -133,66 +141,66 @@ export default {
 </script>
 <style scoped lang="scss">
 .bg {
-  position: relative;
-  overflow: hidden;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   background-image: url("../../static/img/bg.jpg");
-  background-position: -20% 10%;
-  background-size: contain;
-  // #particles-js {
-  //   position: absolute;
-  //   top: 0;
-  //   bottom: 0;
-  //   left: 0;
-  //   right: 0;
-  // }
+  background-size: cover;
 }
 .login-wrap {
-  width: 310px;
-  padding: 30px;
-  z-index: 3;
-  margin-right: -50%;
-  position: relative;
-  background: rgba(100, 100, 100, 0.5);
-  .el-form-item {
-    margin-bottom: 25px !important;
+  margin-top: -3vh;
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  background: #eff2f7;
+  box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.1);
+  .left {
+    width: 24vw;
+    padding: 3vw;
   }
-  h3 {
-    text-align: center;
-    color: #ebedef;
-    margin-top: 0px;
-    margin-bottom: 5px;
-    font-size: 22px;
-    span {
-      color: #20a0ff;
-    }
-  }
-  p {
-    text-align: center;
-    color: #fff;
-    margin: 0;
-    letter-spacing: 1px;
-  }
-  form {
-    margin-top: 25px;
+  .right {
+    background: #fff;
+    padding: 2vw;
+    padding-top: 3vw;
+    width: 16vw;
     .el-form-item {
-      margin-bottom: 15px;
+      margin-bottom: 25px !important;
     }
-  }
-  a {
-    text-decoration: none;
-    color: #1f2d3d;
-  }
-  button {
-    width: 100%;
-    font-weight: 600;
-    border: none;
-    border-radius: 0;
-    margin-top: 20px;
-    background-color: #bb162b;
+    h3 {
+      text-align: center;
+      margin-top: 0px;
+      margin-bottom: 5px;
+      font-size: 22px;
+      color: #2c2c2c;
+    }
+    p {
+      text-align: center;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+    form {
+      margin-top: 25px;
+      .el-form-item {
+        margin-bottom: 15px;
+      }
+    }
+    a {
+      text-decoration: none;
+      color: #1f2d3d;
+    }
+    button {
+      width: 100%;
+      font-weight: 600;
+      border: none;
+      border-radius: 0;
+      margin-top: 20px;
+      background-color: #7367f0;
+      transition: all .2s ease;
+      &:hover {
+        box-shadow: 0 8px 25px -8px #7367f0;
+      }
+    }
   }
 }
 </style>

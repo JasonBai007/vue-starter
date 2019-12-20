@@ -9,10 +9,10 @@ export default {
   name: "colors-picker",
   data() {
     return {
-      color: localStorage.curColor || "#bb162b",
+      color: localStorage.curColor || "#7367f0",
       // 预设几个漂亮的颜色
       predefineColors: [
-        "#bb162b",
+        "#7367f0",
         "#16A085",
         "#27AE60",
         "#2980B9",

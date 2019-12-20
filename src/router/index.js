@@ -26,7 +26,7 @@ const router = new Router({
       path: "/signin",
       name: "Signin",
       meta: {
-        title: "Auto Vue"
+        title: "Vue Starter"
       },
       component: Signin
     },

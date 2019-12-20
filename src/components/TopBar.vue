@@ -84,7 +84,7 @@ export default {
     line-height: 60px;
     transition: all 0.5s;
     &:hover {
-      color: #bb162b;
+      color: #7367f0;
       cursor: pointer;
     }
   }

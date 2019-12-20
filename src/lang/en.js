@@ -1,6 +1,6 @@
 export const m = {
   login: {
-    introduction: 'Sales Insight Platform',
+    introduction: 'An admin Template',
     name_holder: 'Username',
     password_holder: 'Password',
     name_tip: 'Please enter the username',
