@@ -11,7 +11,6 @@ export const m = {
     button: '登 录'
   },
   topbar: {
-    sayHi: '嗨',
     logout: '退出'
   }
 }

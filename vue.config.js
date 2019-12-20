@@ -36,7 +36,7 @@ module.exports = {
             // 官网的文件名，会导致编译后的文件名不对：fileName: 'css/theme-colors-[contenthash:8].css'
             // 不要添加 [contenthash:8]
             fileName: "css/theme-colors.css",
-            matchColors: [...forElementUI.getElementUISeries("#bb162b")], //需要替换的颜色数组，里面都是目标颜色
+            matchColors: [...forElementUI.getElementUISeries("#7367f0")], //需要替换的颜色数组，里面都是目标颜色
             changeSelector: forElementUI.changeSelector
           })
         ]

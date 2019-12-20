@@ -35,7 +35,7 @@ section {
     }
     .num {
       font-size: 30px;
-      color: #bb162b;
+      color: #7367f0;
     }
     .title {
       margin-top: 7px;

@@ -54,8 +54,8 @@ body #app {
   color: #333;
 }
 .el-menu-item.is-active {
-  background: #f8e8ea;
-  border-right: 3px solid #bb162b;
+  background: #e3e1fc;
+  border-right: 3px solid #7367f0;
 }
 .el-submenu.is-opened .el-menu {
   background: #fafafa;

@@ -11,7 +11,6 @@ export const m = {
     button: 'Login'
   },
   topbar: {
-    sayHi: 'Hi',
     logout: 'Logout'
   }
 }

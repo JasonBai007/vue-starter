@@ -1,5 +1,5 @@
 <template>
-  <i class="fa fa-language" title="切换语言" @click="toggleLanguage"></i>
+  <i class="el-icon-s-operation" title="切换语言" @click="toggleLanguage"></i>
 </template>
 
 <script>

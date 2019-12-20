@@ -10,7 +10,7 @@
       <el-col :span="12">
         <el-row type="flex" class="row-right" justify="end" style="margin-right:-15px" align="middle">
           <el-col :span="5">
-            <a class="animated fadeIn">{{$t('m.topbar.sayHi')}}，{{userName}}</a>
+            <a class="animated fadeIn">Hi，{{userName}}</a>
           </el-col>
           <el-col :span="2">
             <lang-switcher></lang-switcher>
