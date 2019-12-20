@@ -1,7 +1,7 @@
 <template>
   <div class="bg">
     <div class="login-wrap animated fadeIn">
-      <img src="../../static/img/login.png" class="left" />
+      <img src="../assets/img/login.png" class="left" />
       <div class="right">
         <h3>Vue Starter</h3>
         <p>{{$t('m.login.introduction')}}</p>
@@ -145,7 +145,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("../../static/img/bg.jpg");
+  background-image: url("../assets/img/bg.jpg");
   background-size: cover;
 }
 .login-wrap {
