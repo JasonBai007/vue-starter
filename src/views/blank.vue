@@ -1,10 +1,10 @@
 <template>
-  <div>季度分析</div>
+  <div>You can start from here.</div>
 </template>
 
 <script>
 export default {
-  name: "quarter",
+  name: "blank",
   components: {},
   data() {
     return {};

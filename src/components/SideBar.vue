@@ -21,7 +21,7 @@
 
           <!-- 二级菜单选项 -->
           <el-menu-item v-for="child in item.children" :index="child.router" :key="child.router">
-            <!-- <i class="fa fa-long-arrow-right"></i> -->
+            <i>○</i>
             <span slot="title">{{langType === 'en'? child.name_en: child.name}}</span>
           </el-menu-item>
         </el-submenu>
@@ -93,9 +93,11 @@ export default {
 .el-submenu .el-menu-item {
   padding: 0 20px;
   min-width: 160px;
-  padding-left: 52px !important;
+  padding-left: 26px !important;
   i {
-    padding-right: 10px;
+    padding-right: 12px;
+    font-weight: bold;
+    font-size: 20px;
   }
 }
 </style>

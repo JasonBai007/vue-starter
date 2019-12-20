@@ -1,8 +1,8 @@
 <template>
   <div class="wrap">
     <div style="margin-top:-20px;">
-      <h1 class="animated swing">404</h1>
-      <h4>We're sorry, but the page you were looking for doesn't exist.</h4>
+      <h1 class="animated swing">401</h1>
+      <h4>We're sorry, but you are not authorized.</h4>
       <el-button
         type="primary"
         icon="el-icon-back"
