@@ -1,15 +1,18 @@
 <template>
   <div>
-    <!-- 这是侧导航 -->
+    <!-- 侧导航 -->
     <side-bar></side-bar>
     <div class="con-wrap" :class="{conCollapse: isCollapse}">
-      <!-- 这是顶部导航 -->
+      <!-- 顶部导航 -->
       <top-bar></top-bar>
+      <!-- 面包屑 -->
       <bread v-if="$route.path !== '/dashboard'"></bread>
-      <!-- 这是组件要插入的地方 -->
+      <!-- 右侧主体页面部分 -->
       <transition name="slide-fade">
         <router-view class="page-component-wrap"></router-view>
       </transition>
+      <!-- 页脚 -->
+      <v-footer />
     </div>
   </div>
 </template>
@@ -17,6 +20,7 @@
 import TopBar from "@/components/TopBar";
 import SideBar from "@/components/SideBar";
 import Bread from "@/components/Bread";
+import Footer from "@/components/Footer";
 export default {
   name: "layout",
   computed: {
@@ -25,9 +29,10 @@ export default {
     }
   },
   components: {
+    Bread,
     "top-bar": TopBar,
     "side-bar": SideBar,
-    Bread
+    "v-footer": Footer
   }
 };
 </script>

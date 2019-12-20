@@ -4,7 +4,7 @@
   <div id="sidebar-wrap" :class="{ collapsed: toggSiderBar }">
     <!-- 顶部图标 -->
     <h3 class="logo">
-      <span>{{toggSiderBar || langType === 'en' ? 'VS': '快速启动模板'}}</span>
+      <span>{{toggSiderBar || langType === 'en' ? 'VS': 'Vue Starter'}}</span>
     </h3>
 
     <!-- 循环生成侧栏菜单 -->
