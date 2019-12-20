@@ -4,7 +4,7 @@
   <div id="topbar-wrap" :class="{ topCollapsed: isCollapse }">
     <el-row type="flex" justify="space-between">
       <el-col :span="6">
-        <i class="iconfont icon-spread toggle-btn" :style="iconStyle"  @click="toggleSiderBar"></i>
+        <i class="el-icon-s-fold toggle-btn" :style="iconStyle"  @click="toggleSiderBar"></i>
         <campaign-select></campaign-select>
       </el-col>
       <el-col :span="12">
@@ -27,7 +27,6 @@
   </div>
 </template>
 <script>
-import "../../static/css/iconfont.css";
 import CampaignSelect from "./CampaignSelect";
 import ColorsPicker from "./ColorsPicker";
 import LangSwitcher from "./LangSwitcher";
@@ -49,7 +48,7 @@ export default {
     },
     iconStyle() {
       return {
-        transform: this.isCollapse ? "rotate(0deg)" : "rotate(180deg)"
+        transform: this.isCollapse ? "rotate(180deg)" : "rotate(0deg)"
       };
     }
   },
