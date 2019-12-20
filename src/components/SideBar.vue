@@ -74,6 +74,7 @@ export default {
   }
   .logo {
     color: #333;
+    font-weight: 600;
     letter-spacing: 1px;
     text-align: center;
     padding: 18px 0;

@@ -173,6 +173,7 @@ export default {
       margin-bottom: 5px;
       font-size: 22px;
       color: #2c2c2c;
+      font-weight: 600;
     }
     p {
       text-align: center;
