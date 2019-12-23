@@ -48,7 +48,7 @@ export default {
     color: #324157;
   }
   .page-component-wrap {
-    padding: 15px;
+    padding: 15px 15px 60px 15px; 
   }
 }
 .con-wrap.conCollapse {
