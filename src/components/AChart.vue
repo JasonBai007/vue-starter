@@ -91,6 +91,5 @@ export default {
 <style lang="scss">
 #myChartWrap {
   width: 100%;
-  height: 55vh;
 }
 </style>

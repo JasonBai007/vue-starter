@@ -33,7 +33,8 @@ body {
 body {
   margin: 0;
   padding: 0;
-  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", sans-serif;
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei",
+    sans-serif;
 }
 body #app {
   height: 100%;
@@ -70,5 +71,9 @@ body #app {
 
 .account-wrap .el-card__body {
   padding: 10px 20px 20px 20px;
+}
+
+button:hover {
+  box-shadow: 0 8px 25px -8px #7367f0;
 }
 </style>

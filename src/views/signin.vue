@@ -197,10 +197,7 @@ export default {
       border-radius: 0;
       margin-top: 20px;
       background-color: #7367f0;
-      transition: all .2s ease;
-      &:hover {
-        box-shadow: 0 8px 25px -8px #7367f0;
-      }
+      transition: all .2s ease;      
     }
   }
 }

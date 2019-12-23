@@ -4,7 +4,12 @@
       <el-col :span="2" class="sel-label">选择城市：</el-col>
       <el-col :span="3">
         <el-select v-model="sel" filterable placeholder="请选择城市" @change="getData">
-          <el-option v-for="(item,index) in options" :label="item.label" :value="item.value" :key="index"></el-option>
+          <el-option
+            v-for="(item,index) in options"
+            :label="item.label"
+            :value="item.value"
+            :key="index"
+          ></el-option>
         </el-select>
       </el-col>
     </el-row>
@@ -45,7 +50,7 @@ import jsonp from "jsonp";
 export default {
   name: "weather",
   components: {
-    "a-chart": AChart
+    AChart
   },
   data() {
     return {
