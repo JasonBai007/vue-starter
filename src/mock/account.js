@@ -21,6 +21,7 @@ if (debug) {
             hero: "@pick(['甄姬','后裔','蔡文姬'])",
             date: "@date",
             province: "@province",
+            city: "@city",
             address: "@csentence",
             type: "@pick(['法师','射手','辅助'])"
           }

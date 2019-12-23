@@ -47,10 +47,11 @@
         <el-table-column prop="name" label="姓名" width="120"></el-table-column>
         <el-table-column prop="hero" label="英雄" width="120"></el-table-column>
         <el-table-column prop="type" label="类型" width="120"></el-table-column>
-        <el-table-column prop="date" label="日期" width="200"></el-table-column>
+        <el-table-column prop="date" label="日期" width="150"></el-table-column>
         <el-table-column prop="province" label="省份" width="200"></el-table-column>
+        <el-table-column prop="city" label="城市" width="200"></el-table-column>
         <el-table-column prop="address" label="住址"></el-table-column>
-        <el-table-column prop="type" label="操作">
+        <el-table-column prop="type" label="操作" width="120">
           <template slot-scope="scope">
             <i class="btn el-icon-edit"></i>
             <i class="btn el-icon-delete"></i>
