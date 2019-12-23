@@ -21,15 +21,12 @@ export default {
 <style lang="scss" scoped>
 section {
   display: flex;
+  justify-content: space-between;
   .item {
-    flex-grow: 1;
     text-align: center;
     padding: 25px 0;
     background: #fff;
-    margin-right: 20px;
-    &:last-child {
-      margin-right: 0;
-    }
+    flex-basis: 15.5%;
     &:hover {
       box-shadow: 0px 0px 10px #ddd;
     }
