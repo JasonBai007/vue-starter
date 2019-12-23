@@ -67,4 +67,8 @@ body #app {
   border-bottom: 1px solid #aaa;
   border-radius: 0;
 }
+
+.account-wrap .el-card__body {
+  padding: 10px 20px 20px 20px;
+}
 </style>
