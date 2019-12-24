@@ -4,7 +4,7 @@
     <el-card class="filter-bar">
       <el-row type="flex" align="bottom" :gutter="20">
         <el-col :span="18">
-          <el-form label-position="top" label-width="80px" :model="formData">
+          <el-form label-position="top" label-width="80px" :model="formData" size="small">
             <el-row :gutter="20">
               <el-col :span="8">
                 <el-form-item label="姓名">
@@ -34,22 +34,22 @@
           </el-form>
         </el-col>
         <el-col :span="6">
-          <el-button @click="resetForm">重置</el-button>
-          <el-button type="primary" icon="el-icon-search" @click="getData">搜索</el-button>
-          <el-button type="primary" icon="el-icon-plus" style="float:right">新建</el-button>
+          <el-button @click="resetForm" size="small">重置</el-button>
+          <el-button type="primary" size="small" icon="el-icon-search" @click="getData">搜索</el-button>
+          <el-button type="primary" size="small" icon="el-icon-plus" style="float:right">新建</el-button>
         </el-col>
       </el-row>
     </el-card>
     <!-- 表格区 -->
     <el-card>
-      <el-table :data="tableData" stripe>
-        <el-table-column prop="id" label="#" width="50" align="center"></el-table-column>
-        <el-table-column prop="name" label="姓名" width="120"></el-table-column>
+      <el-table :data="tableData" stripe size="small">
+        <el-table-column prop="id" label="#" width="100" align="center"></el-table-column>
+        <el-table-column prop="name" label="姓名" width="100"></el-table-column>
         <el-table-column prop="hero" label="英雄" width="120"></el-table-column>
         <el-table-column prop="type" label="类型" width="120"></el-table-column>
         <el-table-column prop="date" label="日期" width="150"></el-table-column>
-        <el-table-column prop="province" label="省份" width="200"></el-table-column>
-        <el-table-column prop="city" label="城市" width="200"></el-table-column>
+        <el-table-column prop="province" label="省份" width="150"></el-table-column>
+        <el-table-column prop="city" label="城市" width="150"></el-table-column>
         <el-table-column prop="address" label="住址"></el-table-column>
         <el-table-column prop="type" label="操作" width="120">
           <template slot-scope="scope">

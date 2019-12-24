@@ -57,3 +57,4 @@ yarn analysis
 5. 动态路由的技术思路，请参照我的[vue-seed](https://github.com/JasonBai007/vue-seed)项目的readme。
 6. 为方便定制化组件库样式，选择Sass作为CSS预处理器。
 7. assets/css/element-variables.scss 全局覆盖饿了么的样式。
+8. 个别页面设计风格抄袭了[Vuexy](https://pixinvent.com/demo/vuexy-vuejs-admin-dashboard-template/landing/)。

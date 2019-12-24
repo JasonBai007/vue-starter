@@ -5,7 +5,7 @@
       <div class="right">
         <h3>Vue Starter</h3>
         <p>{{$t('m.login.introduction')}}</p>
-        <el-form ref="form" :model="form" :rules="rules" label-width="0px">
+        <el-form ref="form" :model="form" :rules="rules" label-width="0px" size="small">
           <el-form-item prop="name">
             <el-input :placeholder="$t('m.login.name_holder')" v-model="form.name" clearable></el-input>
           </el-form-item>
@@ -24,7 +24,7 @@
           </el-row>
           </el-form-item>-->
           <el-form-item>
-            <el-button type="primary" @click="Login('form')">{{$t('m.login.button')}}</el-button>
+            <el-button type="primary" size="small" @click="Login('form')">{{$t('m.login.button')}}</el-button>
           </el-form-item>
         </el-form>
       </div>

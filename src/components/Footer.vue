@@ -19,6 +19,7 @@ footer {
   position: absolute;
   bottom: 0;
   padding: 15px;
+  font-size: 14px;
   i {
     padding-left: 4px;
   }
