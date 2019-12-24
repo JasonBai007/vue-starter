@@ -10,29 +10,22 @@
 <script>
 export default {
   name: "bread",
-  components: {},
   data() {
     return {
       list: []
     };
   },
-  mounted() {
-    this.generateList(this.$route.meta.bread);
-  },
-  computed: {},
   methods: {
     generateList(str) {
-      // 判断是否是多级的面包屑
-      if (str.indexOf("&") === -1) {
-        this.list = [str];
-      } else {
-        this.list = str.split("&");
-      }
+      this.list = str.split("&");
     }
   },
   watch: {
-    $route(n, o) {
-      this.generateList(n.meta.bread);
+    $route: {
+      handler: function(n, o) {
+        this.generateList(n.meta.bread);
+      },
+      immediate: true // 这样就不用在mounted钩子函数里调用generateList方法了
     }
   }
 };
