@@ -2,10 +2,11 @@
 Vue-starter is a powerful admin template built especially for front-end developers, it is user-friendly and straightforward, making it fast and simple to get started.
 
 ## Team members
-PM: 武则天  
-UI: 妲己  
-FE：鲁班七号、后裔  
-BE：东皇太一、亚瑟
+产品：武则天  
+设计：妲己  
+前端：鲁班七号、后裔  
+后端：东皇太一、亚瑟  
+测试：蔡文姬
 
 ## Useful links
 Vue-CLI Docs：[https://cli.vuejs.org/zh/config/](https://cli.vuejs.org/zh/config/)  
