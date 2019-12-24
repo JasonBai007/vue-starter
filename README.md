@@ -22,7 +22,7 @@ yarn install
 yarn serve
 
 # build for production with minification
-yarn run build
+yarn build
 
 # preview your dist files
 cd dist
@@ -32,7 +32,7 @@ http-server
 Ctrl + C
 
 # analysis your dist files
-yarn run analysis
+yarn analysis
 
 ```
 
@@ -49,10 +49,10 @@ yarn run analysis
 * Yarn
 
 ## Notes
-1. 使用前，确保已安装了最新版的第三方组件库。
-2. 使用前，请先仔细阅读Readme文档并完善上面的必要信息。
+1. 使用前，请先仔细阅读Readme文档并完善上面的必要信息。
+2. 路由使用的是hash模式。
 3. 如需修改webpack配置，请修改vue.config.js文件。
-4. 查看并输出webpack配置，在项目根目录执行：vue inspect > output.js
-5. 本项目，兼容IE9及以上。
+4. 使用了动态路由生成技术，路由和菜单是根据mock数据生成的。
+5. 动态路由的技术思路，请参照我的[vue-seed](https://github.com/JasonBai007/vue-seed)项目的readme。
 6. 为方便定制化组件库样式，选择Sass作为CSS预处理器。
 7. assets/css/element-variables.scss 全局覆盖饿了么的样式。
