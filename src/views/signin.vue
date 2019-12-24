@@ -194,7 +194,6 @@ export default {
       width: 100%;
       font-weight: 600;
       border: none;
-      border-radius: 0;
       margin-top: 20px;
       background-color: #7367f0;
       transition: all .2s ease;      

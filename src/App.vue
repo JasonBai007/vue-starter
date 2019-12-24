@@ -73,7 +73,7 @@ body #app {
   padding: 10px 20px 20px 20px;
 }
 
-button:hover {
+.el-button--primary:hover {
   box-shadow: 0 8px 25px -8px #7367f0;
 }
 </style>

@@ -21,7 +21,6 @@
 
           <!-- 二级菜单选项 -->
           <el-menu-item v-for="child in item.children" :index="child.router" :key="child.router">
-            <i>○</i>
             <span slot="title">{{langType === 'en'? child.name_en: child.name}}</span>
           </el-menu-item>
         </el-submenu>
@@ -67,7 +66,7 @@ export default {
   z-index: 5;
   transition: all 0.3s;
   background: #fff;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
   &.collapsed {
     width: 64px;
     transition: all 0.3s;
@@ -93,11 +92,11 @@ export default {
 .el-submenu .el-menu-item {
   padding: 0 20px;
   min-width: 160px;
-  padding-left: 26px !important;
-  i {
-    padding-right: 12px;
-    font-weight: bold;
-    font-size: 20px;
-  }
+  padding-left: 50px !important;
+  // i {
+  //   padding-right: 12px;
+  //   font-weight: bold;
+  //   font-size: 20px;
+  // }
 }
 </style>

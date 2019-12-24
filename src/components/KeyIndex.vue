@@ -27,6 +27,7 @@ section {
     padding: 25px 0;
     background: #fff;
     flex-basis: 15.5%;
+    border-radius: 7px;
     &:hover {
       box-shadow: 0px 0px 10px #ddd;
     }

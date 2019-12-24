@@ -43,6 +43,7 @@ export default {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 200px);
   & > div {
+    border-radius: 7px;
     background: #fff;
     text-align: center;
     line-height: 200px;
