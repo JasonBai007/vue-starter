@@ -1,27 +1,28 @@
+// 暂时废弃，因为使用了动态路由实现权限管理，此文件仅供参考
 import Vue from "vue";
 import Router from "vue-router";
 Vue.use(Router);
 
 // 登录
-const Signin = () => import("@/views/signin")
+const Signin = () => import("@/views/signin");
 
 // 非登录页的包裹组件
-const Layout = () => import("@/views/layout")
+const Layout = () => import("@/views/layout");
 
 // 项目信息
-const Notes = () => import("@/views/notes")
+const Notes = () => import("@/views/notes");
 
 // 关于作者
-const About = () => import("@/views/about")
+const About = () => import("@/views/about");
 
 // 天气预报
-const Weather = () => import("@/views/weather")
+const Weather = () => import("@/views/weather");
 // 立方体
-const Cube = () => import("@/views/cube")
+const Cube = () => import("@/views/cube");
 // 空白页面
-const Blank = () => import("@/views/blank")
+const Blank = () => import("@/views/blank");
 // 404
-const Notfound = () => import("@/views/404")
+const Notfound = () => import("@/views/404");
 
 const router = new Router({
   routes: [

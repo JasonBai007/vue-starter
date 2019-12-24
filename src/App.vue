@@ -7,7 +7,7 @@
 </template>
 <script>
 import router from "./router/index";
-import generateRoutes from "./router/parse";
+import generateRoutes from "./router/parser";
 export default {
   name: "app",
   // 在SPA初始化时，立刻从本地存储中拿到原始数据，解析后注入到路由实例中【吐血】

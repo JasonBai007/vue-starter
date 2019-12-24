@@ -34,7 +34,7 @@
 <script>
 import Vue from "vue";
 import router from "../router/index";
-import generateRoutes from "../router/parse";
+import generateRoutes from "../router/parser";
 export default {
   name: "signin",
   data() {

@@ -8,7 +8,6 @@
     </h3>
 
     <!-- 循环生成侧栏菜单 -->
-    <!-- <el-menu background-color="#3f4d67" text-color="#fff" :default-active="$route.path" :unique-opened="true" :router="true" mode="vertical" :collapse="toggSiderBar"> -->
     <el-menu :default-active="$route.path" :unique-opened="true" :router="true" mode="vertical" :collapse="toggSiderBar">
       <template v-for="item in menu">
         <!-- 多级菜单外壳 -->
@@ -92,11 +91,6 @@ export default {
 .el-submenu .el-menu-item {
   padding: 0 20px;
   min-width: 160px;
-  padding-left: 50px !important;
-  // i {
-  //   padding-right: 12px;
-  //   font-weight: bold;
-  //   font-size: 20px;
-  // }
+  padding-left: 50px !important; 
 }
 </style>
