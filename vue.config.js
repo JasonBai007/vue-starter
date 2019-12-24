@@ -7,6 +7,8 @@ const ThemeColorReplacer = require("webpack-theme-color-replacer");
 const forElementUI = require("webpack-theme-color-replacer/forElementUI");
 
 module.exports = {
+  publicPath:
+    process.env.NODE_ENV === "production" ? "/vue-starter/" : "/",
   productionSourceMap: false,
   devServer: {
     port: 8080, // 配置端口号
