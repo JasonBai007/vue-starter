@@ -123,11 +123,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.filter-bar {
+.filter-bar::v-deep {
   margin-bottom: 20px;
+  .el-card__body {
+    padding: 10px 20px 20px 20px;
+  }
 }
 .el-form-item {
-  margin-bottom: 0 !important;
+  margin-bottom: 0;
 }
 .btn {
   display: inline-block;
@@ -144,6 +147,7 @@ export default {
 .btn:nth-child(2) {
   color: #f56c6c;
 }
+
 .pagination-wrap {
   padding: 20px 0 0 0;
   text-align: right;

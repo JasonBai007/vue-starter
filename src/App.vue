@@ -33,11 +33,11 @@ body {
 body {
   margin: 0;
   padding: 0;
-  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei",
+  font-family: Montserrat, "Helvetica Neue", Arial, "Microsoft Yahei",
     sans-serif;
-}
-body #app {
-  height: 100%;
+  #app {
+    height: 100%;
+  }
 }
 
 /* 覆盖左侧导航样式 */
@@ -67,10 +67,6 @@ body #app {
   border: none;
   border-bottom: 1px solid #aaa;
   border-radius: 0;
-}
-
-.account-wrap .el-card__body {
-  padding: 10px 20px 20px 20px;
 }
 
 .el-button--primary:hover {
