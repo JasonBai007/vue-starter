@@ -4,4 +4,4 @@ read -p "Input commit message:" input
 echo $input
 git commit -m $input
 git push
-echo 'deployed'
+echo 'pushed'
