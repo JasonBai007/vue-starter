@@ -10,6 +10,7 @@ module.exports = {
   publicPath: process.env.NODE_ENV === "production" ? "/vue-starter/" : "/",
   productionSourceMap: false,
   devServer: {
+    openPage:'#/signin',
     port: 8080, // 配置端口号
     // 配置代理
     proxy: {
