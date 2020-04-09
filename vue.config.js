@@ -7,27 +7,28 @@ const ThemeColorReplacer = require("webpack-theme-color-replacer");
 const forElementUI = require("webpack-theme-color-replacer/forElementUI");
 
 module.exports = {
+  // publicPath默认是/，根据项目实际需要调整
   publicPath: process.env.NODE_ENV === "production" ? "/vue-starter/" : "/",
   productionSourceMap: false,
   devServer: {
-    openPage:'#/signin',
+    openPage: "#/signin",
     port: 8080, // 配置端口号
     // 配置代理
     proxy: {
       v2: {
         target: "http://api.douban.com/",
-        changeOrigin: true
-      }
-    }
+        changeOrigin: true,
+      },
+    },
   },
-  configureWebpack: config => {
+  configureWebpack: (config) => {
     // 如果带有 --report 就开启可视化服务
     if (
       process.env.NODE_ENV === "production" &&
       process.env.npm_config_report
     ) {
       return {
-        plugins: [new BundleAnalyzerPlugin()]
+        plugins: [new BundleAnalyzerPlugin()],
       };
     } else {
       // 为开发环境修改配置...
@@ -39,9 +40,9 @@ module.exports = {
             // 不要添加 [contenthash:8]
             fileName: "css/theme-colors.css",
             matchColors: [...forElementUI.getElementUISeries("#7367f0")], //需要替换的颜色数组，里面都是目标颜色
-            changeSelector: forElementUI.changeSelector
-          })
-        ]
+            changeSelector: forElementUI.changeSelector,
+          }),
+        ],
       };
     }
   },
@@ -60,8 +61,8 @@ module.exports = {
       // `scss` 语法会要求语句结尾必须有分号，`sass` 则要求必须没有分号
       // 在这种情况下，我们可以使用 `scss` 选项，对 `scss` 语法进行单独配置
       scss: {
-        prependData: `@import "~@/assets/scss/global.scss";`
-      }
-    }
-  }
+        prependData: `@import "~@/assets/scss/global.scss";`,
+      },
+    },
+  },
 };
