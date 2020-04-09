@@ -1,7 +1,9 @@
 # vue-starter
+
 Vue-starter is a powerful admin template built especially for front-end developers, it is user-friendly and straightforward, making it fast and simple to get started.
 
 ## Team members
+
 产品：武则天  
 设计：妲己  
 前端：鲁班七号、后裔  
@@ -9,13 +11,14 @@ Vue-starter is a powerful admin template built especially for front-end develope
 测试：蔡文姬
 
 ## Useful links
+
 Vue-CLI Docs：[https://cli.vuejs.org/zh/config/](https://cli.vuejs.org/zh/config/)  
 Product Docs：  
-BackAPI Docs：  
+BackAPI Docs：
 
 ## How to use
 
-``` bash
+```bash
 # install dependencies
 yarn install
 
@@ -34,25 +37,25 @@ yarn deploy
 ```
 
 ## Tech stack
-* Vue @ 2.6.10
-* Vue-Router
-* Vuex
-* @Vue/cli
-* ES6
-* Axios
-* Element-UI @ 2.13.0
-* Sass
-* MockJS
-* Yarn
+
+- Vue @ 2.6.10
+- Vue-Router
+- Vuex
+- @Vue/cli
+- ES6
+- Axios
+- Element-UI @ 2.13.0
+- Sass
+- MockJS
+- Yarn
 
 ## Notes
-0. 部署前请修改 deploy.sh 里面的配置。
-1. 使用前，请先仔细阅读Readme文档并完善上面的必要信息。
-2. 路由使用的是hash模式。
-3. 如需修改webpack配置，请修改vue.config.js文件。
-4. 使用了动态路由生成技术，路由和菜单是根据mock数据生成的。
-5. 动态路由的技术思路，请参照我的[vue-seed](https://github.com/JasonBai007/vue-seed)项目的readme。
-6. 为方便定制化组件库样式，选择Sass作为CSS预处理器。
-7. assets/css/element-variables.scss 全局覆盖饿了么的样式。
-8. 个别页面设计风格抄袭了[Vuexy](https://pixinvent.com/demo/vuexy-vuejs-admin-dashboard-template/landing/)。
-9. 部署前，先修改 vue.config.js 里面的配置项 publicPath。
+
+1. 部署前请修改 deploy.sh 里面的配置。
+2. 使用前，请先仔细阅读 Readme 文档并完善上面的必要信息。
+3. 路由使用的是 hash 模式。
+4. 如需修改 webpack 配置，请修改 vue.config.js 文件。
+5. 为方便定制化组件库样式，选择 Sass 作为 CSS 预处理器。
+6. assets/css/element-variables.scss 全局覆盖饿了么的样式。
+7. 个别页面设计风格抄袭了[Vuexy](https://pixinvent.com/demo/vuexy-vuejs-admin-dashboard-template/landing/)。
+8. 部署前，先修改 vue.config.js 里面的配置项 publicPath。
