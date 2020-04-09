@@ -61,7 +61,7 @@ export default {
       let _temp = localStorage.curColor;
       localStorage.clear();
       localStorage.curColor = _temp;
-      this.$router.push("signin");
+      this.$router.push("/signin");
     }
   }
 };

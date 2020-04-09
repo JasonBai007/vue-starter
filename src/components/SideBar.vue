@@ -7,29 +7,33 @@
       <span>{{toggSiderBar || langType === 'en' ? 'VS': 'Vue Starter'}}</span>
     </h3>
 
-    <!-- 循环生成侧栏菜单 -->
-    <el-menu :default-active="$route.path" :unique-opened="true" :router="true" mode="vertical" :collapse="toggSiderBar">
-      <template v-for="item in menu">
-        <!-- 多级菜单外壳 -->
-        <el-submenu v-if="item.children.length !== 0" :index="item.router" :key="item.router">
-          <!-- 一级菜单包裹层 -->
-          <template slot="title">
-            <i :class="item.icon"></i>
-            <span slot="title">{{langType === 'en'? item.name_en: item.name}}</span>
-          </template>
-
-          <!-- 二级菜单选项 -->
-          <el-menu-item v-for="child in item.children" :index="child.router" :key="child.router">
-            <span slot="title">{{langType === 'en'? child.name_en: child.name}}</span>
-          </el-menu-item>
-        </el-submenu>
-
-        <!-- 单级菜单 -->
-        <el-menu-item v-else :index="item.router" :key="item.router">
-          <i :class="item.icon"></i>
-          <span slot="title">{{langType === 'en'? item.name_en: item.name}}</span>
-        </el-menu-item>
-      </template>
+    <!-- 侧栏菜单 -->
+    <el-menu
+      :default-active="$route.path"
+      :unique-opened="true"
+      :router="true"
+      :collapse="toggSiderBar"
+    >
+      <el-menu-item index="/dashboard">
+        <i class="el-icon-menu"></i>
+        <span slot="title">Dashboard</span>
+      </el-menu-item>
+      <el-menu-item index="/account">
+        <i class="el-icon-s-tools"></i>
+        <span slot="title">人员管理</span>
+      </el-menu-item>
+      <el-menu-item index="/weather">
+        <i class="el-icon-picture"></i>
+        <span slot="title">气象信息</span>
+      </el-menu-item>
+      <el-submenu index>
+        <template slot="title">
+          <i class="el-icon-s-data"></i>
+          <span>其它页面</span>
+        </template>
+        <el-menu-item index="/others/blank">Blank</el-menu-item>
+        <el-menu-item index="/401">401</el-menu-item>
+      </el-submenu>
     </el-menu>
   </div>
 </template>
@@ -91,6 +95,6 @@ export default {
 .el-submenu .el-menu-item {
   padding: 0 20px;
   min-width: 160px;
-  padding-left: 50px !important; 
+  padding-left: 50px !important;
 }
 </style>

@@ -99,43 +99,28 @@ export default {
               localStorage.userName = res.userName;
               localStorage.userId = res.userId;
               localStorage.token = res.token;
-              this.getMenu();
+              this.$router.push('/dashboard')
             });
         } else {
           return false;
         }
       });
-    },
-    getMenu() {
-      this.$http.get("getMenu").then(res => {
-        // 提取菜单数组，交给本地存储
-        console.log(res);
-        let menu = res.menu;
-        // 将原始数据进行本地存储
-        localStorage.menu = JSON.stringify(menu);
-        // 解析出路由配置表
-        const _routes = generateRoutes(menu);
-        // 动态加载路由配置表
-        router.addRoutes(_routes);
-        // 跳转到首页
-        this.$router.push("/dashboard");
-      });
-    },
+    },    
     openMsg() {
       // 注意这里使用了国际化
       this.$message.warning(this.$t("m.login.info"));
     }
   },
   watch: {
-    isMemery(n, o) {
-      if (n) {
-        localStorage.userInfo = this.form.name;
-        localStorage.passwordInfo = this.form.password;
-      } else {
-        localStorage.removeItem("userInfo");
-        localStorage.removeItem("passwordInfo");
-      }
-    }
+    // isMemery(n, o) {
+    //   if (n) {
+    //     localStorage.userInfo = this.form.name;
+    //     localStorage.passwordInfo = this.form.password;
+    //   } else {
+    //     localStorage.removeItem("userInfo");
+    //     localStorage.removeItem("passwordInfo");
+    //   }
+    // }
   }
 };
 </script>

@@ -1,3 +1,4 @@
+// 如果需要动态生成路由，那可以参考这个文件
 // 解析后台传过来的数组，输出routes配置表数组
 export default function generateRoutes(arr) {
   // 准备一个框
