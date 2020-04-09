@@ -25,15 +25,11 @@ yarn serve
 # build for production with minification
 yarn build
 
-# preview your dist files
-cd dist
-http-server
-
-# stop your local http server
-Ctrl + C
-
 # analysis your dist files
 yarn analysis
+
+# deploy your application
+yarn deploy
 
 ```
 
@@ -50,6 +46,7 @@ yarn analysis
 * Yarn
 
 ## Notes
+0. 部署前请修改 deploy.sh 里面的配置。
 1. 使用前，请先仔细阅读Readme文档并完善上面的必要信息。
 2. 路由使用的是hash模式。
 3. 如需修改webpack配置，请修改vue.config.js文件。
