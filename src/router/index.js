@@ -3,23 +3,23 @@ import Router from "vue-router";
 Vue.use(Router);
 
 // 登录
-const Signin = () => import("@/views/signin");
+const signin = () => import("@/views/signin");
 // 非登录页的包裹组件
-const Layout = () => import("@/layout");
-// 三级包裹组件
-const Third = () => import("@/layout/third");
+const layout = () => import("@/layout");
+// 嵌套的更深层级的包裹组件
+const nested = () => import("@/layout/nested");
 // 首页
-const Dashboard = () => import("@/views/dashboard");
+const dashboard = () => import("@/views/dashboard");
 // 人员管理
-const Account = () => import("@/views/account");
+const account = () => import("@/views/account");
 // 气象信息
-const Weather = () => import("@/views/weather");
+const weather = () => import("@/views/weather");
 // 空白页面
-const Blank = () => import("@/views/blank");
+const blank = () => import("@/views/blank");
 // 401
-const Unauthorized = () => import("@/views/401");
+const unauthorized = () => import("@/views/401");
 // 404
-const Notfound = () => import("@/views/404");
+const notfound = () => import("@/views/404");
 
 const router = new Router({
   routes: [
@@ -30,7 +30,7 @@ const router = new Router({
       meta: {
         title: "Vue Starter",
       },
-      component: Signin,
+      component: signin,
     },
     {
       path: "/",
@@ -39,7 +39,7 @@ const router = new Router({
         title: "首页",
       },
       redirect: "/dashboard",
-      component: Layout,
+      component: layout,
       children: [
         {
           path: "dashboard",
@@ -47,7 +47,7 @@ const router = new Router({
           meta: {
             title: "Dashboard",
           },
-          component: Dashboard,
+          component: dashboard,
         },
         {
           path: "account",
@@ -55,7 +55,7 @@ const router = new Router({
           meta: {
             title: "人员管理",
           },
-          component: Account,
+          component: account,
         },
         {
           path: "weather",
@@ -63,23 +63,15 @@ const router = new Router({
           meta: {
             title: "气象信息",
           },
-          component: Weather,
+          component: weather,
         },
-        // {
-        //   path: "others/blank",
-        //   name: "blank",
-        //   meta: {
-        //     title: "Blank",
-        //   },
-        //   component: Blank,
-        // },
         {
           path: "others",
           name: "others",
           meta: {
             title: "其它页面",
           },
-          component: Third,
+          component: nested,
           children: [
             {
               path: "blank",
@@ -87,7 +79,7 @@ const router = new Router({
               meta: {
                 title: "空白页面",
               },
-              component: Blank,
+              component: blank,
             },
           ],
         },
@@ -99,14 +91,14 @@ const router = new Router({
       meta: {
         title: "Unauthorized",
       },
-      component: Unauthorized,
+      component: unauthorized,
     },
     {
       path: "*",
       meta: {
         title: "404",
       },
-      component: Notfound,
+      component: notfound,
     },
   ],
 });

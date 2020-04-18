@@ -5,7 +5,7 @@
 </template>
 <script>
 export default {
-  name: "third"
+  name: "nested"
 };
 </script>
 <style lang="scss" scoped>
