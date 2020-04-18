@@ -1,26 +1,19 @@
-import axios from 'axios' //如果有action
+import axios from "axios"; //如果有action
 
 const module1 = {
-    state: {
+  state: {},
+  getters: {},
+  mutations: {},
+  actions: {
+    // search({ commit }) {
+    //     axios({
+    //     }).then(res => {
+    //         console.log(res)
+    //     }).catch(error => {
+    //         console.log(error)
+    //     })
+    // }
+  },
+};
 
-    },
-    getters: {
-
-    },
-    mutations: {
-
-    },
-    actions: {
-        // search({ commit }) {
-        //     axios({
-
-        //     }).then(res => {
-        //         console.log(res)
-        //     }).catch(error => {
-        //         console.log(error)
-        //     })
-        // }
-    }
-}
-
-export default module1
+export default module1;
