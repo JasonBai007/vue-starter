@@ -1,6 +1,6 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-// 必须在最开始引入垫片
+// 引入垫片兼容IE
 import "babel-polyfill";
 import Vue from "vue";
 import App from "./App";
@@ -12,15 +12,17 @@ import i18n from "./lang";
 import * as utils from "./utils";
 // 引入全局过滤器
 // import '@/filters'
-import "font-awesome/scss/font-awesome.scss";
 // 在入口处引入模拟的假数据
 import "@/mock";
+import animated from "animate.css";
 // 引入完整的饿了么组件库
 import ElementUI from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 import "./assets/scss/element-variables.scss";
+import "font-awesome/scss/font-awesome.scss";
 import "@/assets/css/fonts.css";
 Vue.use(ElementUI);
+Vue.use(animated);
 // 将http绑定到vue原型上
 Vue.prototype.$http = http;
 // 将公共汽车绑定到vue原型上
@@ -32,5 +34,5 @@ new Vue({
   i18n,
   router,
   store,
-  render: h => h(App)
+  render: (h) => h(App),
 }).$mount("#app");
