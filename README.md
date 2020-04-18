@@ -44,18 +44,18 @@ yarn deploy
 - @Vue/cli
 - ES6
 - Axios
-- Element-UI @ 2.13.0
+- Element-UI @ 2.13.1
 - Sass
 - MockJS
 - Yarn
 
 ## Notes
 
-1. 部署前请修改 deploy.sh 里面的配置。
+1. 借助 deploy.sh 实现一键部署。
 2. 使用前，请先仔细阅读 Readme 文档并完善上面的必要信息。
 3. 路由使用的是 hash 模式。
 4. 如需修改 webpack 配置，请修改 vue.config.js 文件。
 5. 为方便定制化组件库样式，选择 Sass 作为 CSS 预处理器。
-6. assets/css/element-variables.scss 全局覆盖饿了么的样式。
+6. assets/css/element-variables.scss 全局覆盖饿了么的样式变量。
 7. 个别页面设计风格抄袭了[Vuexy](https://pixinvent.com/demo/vuexy-vuejs-admin-dashboard-template/landing/)。
 8. 部署前，先修改 vue.config.js 里面的配置项 publicPath。
