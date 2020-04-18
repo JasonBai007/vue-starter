@@ -18,7 +18,7 @@
 // require("echarts/lib/component/legend");
 
 export default {
-  name: "achart",
+  name: "bai-chart",
   props: {
     chartData: {
       type: Object,
@@ -31,7 +31,7 @@ export default {
   },
   data() {
     return {
-      myChartData: this.chartData
+      // myChartData: this.chartData  // 不再组件内放置一个变量，接收传入的对象
     };
   },
   computed: {
@@ -68,7 +68,7 @@ export default {
         {
           color: this.colorArr
         },
-        this.myChartData
+        this.chartData // 直接使用props中的chartData渲染图表
       );
       this.myChart.setOption(_options);
     }
@@ -77,7 +77,7 @@ export default {
     // 深度监听传入的数据变化，一定加deep属性哦
     chartData: {
       handler(v, o) {
-        this.myChartData = v;
+        // this.myChartData = v;
         this.renderChart();
       },
       deep: true

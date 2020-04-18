@@ -7,8 +7,8 @@
           <el-form label-position="top" label-width="80px" :model="formData" size="small">
             <el-row :gutter="20">
               <el-col :span="8">
-                <el-form-item label="姓名">
-                  <el-input v-model="formData.name" placeholder="请输入姓名" clearable></el-input>
+                <el-form-item label="英雄">
+                  <el-input v-model="formData.name" placeholder="请输入英雄名称" clearable></el-input>
                 </el-form-item>
               </el-col>
               <el-col :span="8">
@@ -44,14 +44,13 @@
     <el-card>
       <el-table :data="tableData" stripe size="small">
         <el-table-column prop="id" label="#" width="100" align="center"></el-table-column>
-        <el-table-column prop="name" label="姓名" width="100"></el-table-column>
         <el-table-column prop="hero" label="英雄" width="120"></el-table-column>
         <el-table-column prop="type" label="类型" width="120"></el-table-column>
-        <el-table-column prop="date" label="日期" width="150"></el-table-column>
+        <el-table-column prop="date" label="上架时间" width="150"></el-table-column>
         <el-table-column prop="province" label="省份" width="150"></el-table-column>
         <el-table-column prop="city" label="城市" width="150"></el-table-column>
         <el-table-column prop="address" label="住址"></el-table-column>
-        <el-table-column prop="type" label="操作" width="120">
+        <el-table-column prop="type" label="操作" width="150" align="center">
           <template slot-scope="scope">
             <i class="btn el-icon-edit"></i>
             <i class="btn el-icon-delete"></i>

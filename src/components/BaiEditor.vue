@@ -6,7 +6,7 @@
 // wangEditor官方文档地址：
 // https://www.kancloud.cn/wangfupeng/wangeditor3/335769
 // 使用说明：
-// <bai-editor value="editorVal"></bai-editor>
+// <bai-editor v-model="editorVal"></bai-editor>
 import Editor from "wangeditor";
 export default {
   name: "baiEditor",

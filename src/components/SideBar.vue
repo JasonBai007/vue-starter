@@ -1,19 +1,14 @@
 <!-- 左侧导航组件 -->
 <!-- 使用说明：<side-bar></side-bar> -->
 <template>
-  <div id="sidebar-wrap" :class="{ collapsed: toggSiderBar }">
+  <div id="sidebar-wrap" :class="{ collapsed: isFold }">
     <!-- 顶部图标 -->
     <h3 class="logo">
-      <span>{{toggSiderBar || langType === 'en' ? 'VS': 'Vue Starter'}}</span>
+      <span>{{isFold || langType === 'en' ? 'VS': 'Vue Starter'}}</span>
     </h3>
 
     <!-- 侧栏菜单 -->
-    <el-menu
-      :default-active="$route.path"
-      :unique-opened="true"
-      :router="true"
-      :collapse="toggSiderBar"
-    >
+    <el-menu :default-active="$route.path" :unique-opened="true" :router="true" :collapse="isFold">
       <el-menu-item index="/dashboard">
         <i class="el-icon-menu"></i>
         <span slot="title">Dashboard</span>
@@ -47,7 +42,7 @@ export default {
     };
   },
   computed: {
-    toggSiderBar() {
+    isFold() {
       return this.$store.state.common.isCollapse;
     },
     langType() {
