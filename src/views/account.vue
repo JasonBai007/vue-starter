@@ -53,7 +53,7 @@
         <el-table-column prop="type" label="操作" width="150" align="center">
           <template slot-scope="scope">
             <i class="btn el-icon-edit"></i>
-            <i class="btn el-icon-delete"></i>
+            <i class="btn el-icon-delete" @click="handleDelete(scope.row)"></i>
           </template>
         </el-table-column>
       </el-table>
@@ -116,6 +116,19 @@ export default {
     handleSizeChange(num) {
       this.paginationData.pageSize = num;
       this.getData();
+    },
+    handleDelete(obj) {
+      this.$confirm(`确定要删除 ${obj.hero} ?`, "提示")
+        .then(() => {
+          this.$http.delete(`list/${obj.id}`).then(res => {
+            this.$message({
+              type: "success",
+              message: "Success!"
+            });
+            this.getData();
+          });
+        })
+        .catch(() => {});
     }
   }
 };

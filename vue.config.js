@@ -15,7 +15,7 @@ module.exports = {
     port: 8080, // 配置端口号
     // 配置代理
     proxy: {
-      v2: {
+      '/api': {
         target: "http://api.douban.com/",
         changeOrigin: true,
       },
