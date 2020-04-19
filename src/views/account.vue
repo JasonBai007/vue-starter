@@ -95,12 +95,14 @@ export default {
   },
   methods: {
     async getData() {
-      let _data = await this.$http.get("getTableData", {
-        currentPage: this.paginationData.currentPage,
-        pageSize: this.paginationData.pageSize
+      let res = await this.$http.get("getTableData", {
+        params: {
+          currentPage: this.paginationData.currentPage,
+          pageSize: this.paginationData.pageSize
+        }
       });
-      this.tableData = _data.data;
-      this.paginationData.total = _data.total;
+      this.tableData = res.data.data.list;
+      this.paginationData.total = res.data.data.total;
     },
     resetForm() {
       this.formData = {

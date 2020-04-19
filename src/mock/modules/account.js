@@ -14,7 +14,7 @@ if (debug) {
         total: 100,
         currentPage: Number(params.currentPage),
         pageSize: Number(params.pageSize),
-        "data|10": [
+        "list|10": [
           {
             id: "@increment",
             hero: "@pick(['甄姬','后裔','蔡文姬'])",
