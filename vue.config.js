@@ -1,19 +1,19 @@
 // Config Reference: https://cli.vuejs.org/zh/config/
 // 编译文件可视化工具
-const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
-  .BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 // 引入颜色值批量替换模块
 const ThemeColorReplacer = require("webpack-theme-color-replacer");
 const forElementUI = require("webpack-theme-color-replacer/forElementUI");
 
 module.exports = {
-  // publicPath默认是/，根据项目实际需要调整
+  /* publicPath默认是/，部署前根据远端路径进行调整 */
   // publicPath: process.env.NODE_ENV === "production" ? "/vue-starter/" : "/",
   productionSourceMap: false,
   devServer: {
+    host: '0.0.0.0',
     openPage: "#/signin",
     port: 8080, // 配置端口号
-    // 配置代理
+    // 配置多个代理
     proxy: {
       "/api": {
         target: "http://api.douban.com/",

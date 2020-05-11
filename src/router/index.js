@@ -21,6 +21,9 @@ const unauthorized = () => import("@/views/401");
 // 404
 const notfound = () => import("@/views/404");
 
+// 可以在meta中：
+// 添加 auth 来控制是否校验权限
+// 添加 keepAlive 来控制是否需要缓存
 const router = new Router({
   routes: [
     // 首先是登录页的路由
