@@ -8,8 +8,9 @@ import router from "./router";
 import store from "./store";
 import http from "./http";
 import i18n from "./lang";
-// 引入全局工具函数
-import * as utils from "./utils";
+// 引入并注册全局工具函数
+import utils from "./utils";
+Vue.use(utils)
 // 引入全局过滤器
 // import '@/filters'
 // 在入口处引入模拟的假数据

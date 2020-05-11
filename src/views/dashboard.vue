@@ -23,7 +23,6 @@ export default {
       keyIndexArr: []
     };
   },
-  computed: {},
   mounted() {
     this.getKeyIndexData();
   },

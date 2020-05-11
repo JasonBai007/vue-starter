@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build",
     "analysis": "npm run build --report",
-    "deploy": "sh deploy"
+    "deploy": "sh deploy.sh"
   },
   "dependencies": {
     "animate.css": "^3.7.2",
