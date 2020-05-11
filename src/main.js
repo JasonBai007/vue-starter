@@ -13,7 +13,11 @@ import * as utils from "./utils";
 // 引入全局过滤器
 // import '@/filters'
 // 在入口处引入模拟的假数据
-import "@/mock";
+import "@/mock"
+// 下面几行代码可以实现，生产环境中不引入mock假数据
+// if (process.env.NODE_ENV === 'development') {
+//   require('@/mock')
+// }
 import animated from "animate.css";
 // 引入完整的饿了么组件库
 import ElementUI from "element-ui";
