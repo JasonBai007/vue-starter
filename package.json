@@ -29,6 +29,8 @@
     "@vue/cli-plugin-router": "^4.1.0",
     "@vue/cli-plugin-vuex": "^4.1.0",
     "@vue/cli-service": "^4.1.0",
+    "browserslist": "^4.12.0",
+    "caniuse-lite": "^1.0.30001055",
     "compression-webpack-plugin": "^3.1.0",
     "sass": "^1.23.7",
     "sass-loader": "^8.0.0",
