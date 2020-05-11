@@ -1,6 +1,6 @@
 // Config Reference: https://cli.vuejs.org/zh/config/
-// 编译文件可视化工具
-const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+// webpack可视化分析工具
+const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 // 引入颜色值批量替换模块
 const ThemeColorReplacer = require("webpack-theme-color-replacer");
 const forElementUI = require("webpack-theme-color-replacer/forElementUI");
