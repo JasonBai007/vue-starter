@@ -13,13 +13,13 @@ export default {
       value: ""
     };
   },
-  computed: {},
   mounted() {
     this.getCampaignList();
   },
   methods: {
     async getCampaignList() {
-      this.options = await this.$http.get("campaign");
+      const res = await this.$http.get("campaign");
+      this.options = res.data.data;
     }
   }
 };

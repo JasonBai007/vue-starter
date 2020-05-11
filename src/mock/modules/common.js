@@ -7,7 +7,7 @@ if (debug) {
     msg: "Success",
     data: {
       userId: "@integer(1,10)",
-      "userName|1": ["白总"],
+      "userName|1": ["Admin","Operators"],
       token: "@string(30)"
     }
   });  

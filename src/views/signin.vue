@@ -96,9 +96,10 @@ export default {
               password: this.form.password
             })
             .then(res => {
-              localStorage.userName = res.userName;
-              localStorage.userId = res.userId;
-              localStorage.token = res.token;
+              console.log(res)
+              localStorage.userName = res.data.data.userName;
+              localStorage.userId = res.data.data.userId;
+              localStorage.token = res.data.data.token;
               this.$router.push('/dashboard')
             });
         } else {
@@ -137,7 +138,6 @@ export default {
   margin-top: -3vh;
   padding: 0px;
   display: flex;
-  align-items: center;
   background: #eff2f7;
   box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.1);
   .left {
