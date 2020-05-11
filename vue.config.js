@@ -4,6 +4,8 @@ const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 // 引入颜色值批量替换模块
 const ThemeColorReplacer = require("webpack-theme-color-replacer");
 const forElementUI = require("webpack-theme-color-replacer/forElementUI");
+// 引入gzip压缩插件
+const CompressionPlugin = require('compression-webpack-plugin')
 
 module.exports = {
   /* publicPath默认是/，部署前根据远端路径进行调整 */
@@ -22,27 +24,33 @@ module.exports = {
     },
   },
   configureWebpack: (config) => {
+    // 不管什么环境，都使用颜色替换插件
+    config.plugins.push(
+      //生成仅包含颜色的替换样式（主题色等）如果不想随便改变主题色，就注释掉下面的代码
+      new ThemeColorReplacer({
+        // 官网的文件名，会导致编译后的文件名不对：fileName: 'css/theme-colors-[contenthash:8].css'
+        // 不要添加 [contenthash:8]
+        fileName: "css/theme-colors.css",
+        matchColors: [...forElementUI.getElementUISeries("#7367f0")], //需要替换的颜色数组，里面都是目标颜色
+        changeSelector: forElementUI.changeSelector,
+      })
+    )
     // 如果带有 --report 就开启可视化服务
-    if (
-      process.env.NODE_ENV === "production" &&
-      process.env.npm_config_report
-    ) {
-      return {
-        plugins: [new BundleAnalyzerPlugin()],
-      };
+    if (process.env.NODE_ENV === "production" && process.env.npm_config_report) {
+      config.plugins.push(new BundleAnalyzerPlugin())
+    }
+    // 如果是生产环境
+    if (process.env.NODE_ENV === 'production') {
+      // 构建的时候可以开启gzip压缩，生成.gz压缩文件，这样服务器上就不用自己压缩了，
+      // 也可以不开启，那样的话，服务器就得压缩了
+      // config.plugins.push(
+      //   new CompressionPlugin({
+      //     test: /\.(css|js)$/,
+      //     threshold: 10240, // 对超过10kb的数据进行压缩
+      //   })
+      // )
     } else {
-      return {
-        plugins: [
-          //生成仅包含颜色的替换样式（主题色等）如果不想随便改变主题色，就注释掉下面的代码
-          new ThemeColorReplacer({
-            // 官网的文件名，会导致编译后的文件名不对：fileName: 'css/theme-colors-[contenthash:8].css'
-            // 不要添加 [contenthash:8]
-            fileName: "css/theme-colors.css",
-            matchColors: [...forElementUI.getElementUISeries("#7367f0")], //需要替换的颜色数组，里面都是目标颜色
-            changeSelector: forElementUI.changeSelector,
-          }),
-        ],
-      };
+      // 如果是开发环境
     }
   },
   css: {
