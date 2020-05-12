@@ -5,8 +5,15 @@
 <script>
 // wangEditor官方文档地址：
 // https://www.kancloud.cn/wangfupeng/wangeditor3/335769
+
 // 使用说明：
 // <bai-editor v-model="editorVal"></bai-editor>
+// 提交表单的时候，需要将逻辑包裹在setTimeout里，保证数据变化后，再提交
+// submit() {
+//   setTimeout(()=>{
+//     // 将最新数据发送给后端
+//   },0)
+// }
 import Editor from "wangeditor";
 export default {
   name: "baiEditor",
@@ -26,9 +33,11 @@ export default {
     init() {
       this.editor = new Editor(`#${this.id}`);
       this.editor.customConfig.zIndex = 100;
-      this.editor.customConfig.onchangeTimeout = 2000;
+      // 默认粘贴过来的不带样式（true），设置为false后，就带样式粘贴了
+      // editor.customConfig.pasteFilterStyle = true
       this.editor.customConfig.uploadImgShowBase64 = true;
-      this.editor.customConfig.onchange = html => {
+      // 失去焦点的时候，向父组件释放input事件，改变父组件中的值
+      this.editor.customConfig.onblur = html => {
         this.$emit("input", html);
       };
       // 自定义菜单配置
@@ -59,40 +68,12 @@ export default {
         "Arial",
         "Verdana"
       ];
-      //   this.editor.customConfig.lang = {
-      //     设置标题: "Title",
-      //     正文: "Paragraph",
-      //     字号: "Font Size",
-      //     字体: "Font Family",
-      //     文字颜色: "Font Colors",
-      //     背景色: "Background Colors",
-      //     插入表格: "Insert Table",
-      //     插入代码: "Insert Code",
-      //     插入: "Insert",
-      //     链接文字: "Link Text",
-      //     图片链接: "Link Image",
-      //     链接: "Link",
-      //     设置列表: "List",
-      //     有序列表: "Ordered List",
-      //     无序列表: "Unordered List",
-      //     上传图片: "Upload Image",
-      //     网络图片: "Internet Image",
-      //     上传: "Upload",
-      //     对齐方式: "Alignment",
-      //     靠左: "Left",
-      //     居中: "Center",
-      //     靠右: "Right",
-      //     创建: "",
-      //     行: "rows",
-      //     列的表格: "columns"
-      //   };
       this.editor.create();
     }
   },
   watch: {
     value(n, o) {
-      // 针对编辑页打开的时候，旧值是空字符，新值是编辑页内容，才设置内容，平时输入的时候，旧值不是空字符，就不用再设置内容了
-      if (o === "") this.editor.txt.html(n);
+      this.editor.txt.html(n);
     }
   }
 };
