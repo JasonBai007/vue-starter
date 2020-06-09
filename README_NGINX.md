@@ -78,9 +78,8 @@ server {
   location = /index.html {
      add_header Cache-Control no-cache;
   }
-
-  location ~ /(js/*|css/*|img/*|font/*) {
-      # 缓存时间30天
+  # 静态资源缓存时间30天
+  location ~* \.(jpg|png|jpeg|gif|js|css)$ {      
       expires 30d;
       add_header Cache-Control public;
    }
