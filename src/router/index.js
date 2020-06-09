@@ -2,25 +2,6 @@ import Vue from "vue";
 import Router from "vue-router";
 Vue.use(Router);
 
-// 登录
-const signin = () => import("@/views/signin");
-// 非登录页的包裹组件
-const layout = () => import("@/layout");
-// 嵌套的更深层级的包裹组件
-const nested = () => import("@/layout/nested");
-// 首页
-const dashboard = () => import("@/views/dashboard");
-// 人员管理
-const account = () => import("@/views/account");
-// 气象信息
-const weather = () => import("@/views/weather");
-// 空白页面
-const blank = () => import("@/views/blank");
-// 401
-const unauthorized = () => import("@/views/401");
-// 404
-const notfound = () => import("@/views/404");
-
 // 可以在meta中：
 // 添加 auth 来控制是否校验权限
 // 添加 keepAlive 来控制是否需要缓存
@@ -33,7 +14,7 @@ const router = new Router({
       meta: {
         title: "Vue Starter",
       },
-      component: signin,
+      component: () => import("@/views/signin"),
     },
     {
       path: "/",
@@ -42,7 +23,7 @@ const router = new Router({
         title: "首页",
       },
       redirect: "/dashboard",
-      component: layout,
+      component: () => import("@/layout"),
       children: [
         {
           path: "dashboard",
@@ -50,7 +31,7 @@ const router = new Router({
           meta: {
             title: "Dashboard",
           },
-          component: dashboard,
+          component: () => import("@/views/dashboard"),
         },
         {
           path: "account",
@@ -58,7 +39,7 @@ const router = new Router({
           meta: {
             title: "人员管理",
           },
-          component: account,
+          component: () => import("@/views/account"),
         },
         {
           path: "weather",
@@ -66,7 +47,7 @@ const router = new Router({
           meta: {
             title: "气象信息",
           },
-          component: weather,
+          component: () => import("@/views/weather"),
         },
         {
           path: "others",
@@ -74,7 +55,7 @@ const router = new Router({
           meta: {
             title: "其它页面",
           },
-          component: nested,
+          component: () => import("@/layout/nested"),
           children: [
             {
               path: "blank",
@@ -82,7 +63,7 @@ const router = new Router({
               meta: {
                 title: "空白页面",
               },
-              component: blank,
+              component: () => import("@/views/blank"),
             },
           ],
         },
@@ -94,14 +75,14 @@ const router = new Router({
       meta: {
         title: "Unauthorized",
       },
-      component: unauthorized,
+      component: () => import("@/views/401"),
     },
     {
       path: "*",
       meta: {
         title: "404",
       },
-      component: notfound,
+      component: () => import("@/views/404"),
     },
   ],
 });
