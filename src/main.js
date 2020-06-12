@@ -12,10 +12,6 @@ import store from "./store";
 import http from "./http";
 Vue.prototype.$http = http;
 
-// 引入并注册全局工具函数
-import utils from "./utils";
-Vue.use(utils)
-
 // 引入全局过滤器
 import '@/filters'
 
