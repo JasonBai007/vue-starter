@@ -1,4 +1,7 @@
-export const m = {
+import enLocale from 'element-ui/lib/locale/lang/en'
+
+export default {
+  ...enLocale,
   login: {
     introduction: 'An admin Template',
     name_holder: 'Username',

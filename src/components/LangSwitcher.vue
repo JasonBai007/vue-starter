@@ -1,5 +1,5 @@
 <template>
-  <i class="el-icon-s-operation" title="切换语言" @click="toggleLanguage"></i>
+  <img src="../assets/img/translate.png" class="langImg" width="22" style="vertical-align:sub" @click="toggleLanguage" />
 </template>
 
 <script>
@@ -20,8 +20,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.el-icon-s-operation {
-  font-weight: 600;
+.langImg {
+  width: 22px;
+  &:hover {
+    cursor: pointer;
+  }
 }
 </style>
 

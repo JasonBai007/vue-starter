@@ -4,27 +4,22 @@
       <img src="../assets/img/login.png" class="left" />
       <div class="right">
         <h3>Vue Starter</h3>
-        <p>{{$t('m.login.introduction')}}</p>
+        <p>{{$t('login.introduction')}}</p>
         <el-form ref="form" :model="form" :rules="rules" label-width="0px" size="small">
           <el-form-item prop="name">
-            <el-input :placeholder="$t('m.login.name_holder')" v-model="form.name" clearable></el-input>
+            <el-input :placeholder="$t('login.name_holder')" v-model="form.name" clearable></el-input>
           </el-form-item>
           <el-form-item prop="password">
-            <el-input
-              :placeholder="$t('m.login.password_holder')"
-              v-model="form.password"
-              type="password"
-              clearable
-            ></el-input>
+            <el-input :placeholder="$t('login.password_holder')" v-model="form.password" type="password" clearable></el-input>
           </el-form-item>
           <!-- <el-form-item>
           <el-row type="flex" justify="space-between">
-            <el-checkbox v-model="isMemery" style="color:#eee">{{$t('m.login.remember')}}</el-checkbox>
-            <a href @click.prevent="openMsg" style="color:#eee">{{$t('m.login.forget')}}</a>
+            <el-checkbox v-model="isMemery" style="color:#eee">{{$t('login.remember')}}</el-checkbox>
+            <a href @click.prevent="openMsg" style="color:#eee">{{$t('login.forget')}}</a>
           </el-row>
           </el-form-item>-->
           <el-form-item>
-            <el-button type="primary" size="small" @click="Login('form')">{{$t('m.login.button')}}</el-button>
+            <el-button type="primary" size="small" @click="Login('form')">{{$t('login.button')}}</el-button>
           </el-form-item>
         </el-form>
       </div>
@@ -71,7 +66,7 @@ export default {
         name: [
           {
             required: true,
-            message: this.$t("m.login.name_tip"),
+            message: this.$t("login.name_tip"),
             trigger: "blur"
             // validator: checkone
           }
@@ -79,7 +74,7 @@ export default {
         password: [
           {
             required: true,
-            message: this.$t("m.login.password_tip"),
+            message: this.$t("login.password_tip"),
             trigger: "blur"
           }
         ]
@@ -96,20 +91,19 @@ export default {
               password: this.form.password
             })
             .then(res => {
-              console.log(res)
               localStorage.userName = res.data.data.userName;
               localStorage.userId = res.data.data.userId;
               localStorage.token = res.data.data.token;
-              this.$router.push('/dashboard')
+              this.$router.push("/dashboard");
             });
         } else {
           return false;
         }
       });
-    },    
+    },
     openMsg() {
       // 注意这里使用了国际化
-      this.$message.warning(this.$t("m.login.info"));
+      this.$message.warning(this.$t("login.info"));
     }
   },
   watch: {
@@ -181,7 +175,7 @@ export default {
       border: none;
       margin-top: 20px;
       background-color: #7367f0;
-      transition: all .2s ease;      
+      transition: all 0.2s ease;
     }
   }
 }

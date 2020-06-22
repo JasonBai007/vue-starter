@@ -1,15 +1,19 @@
 import Vue from 'vue'
 import VueI18n from 'vue-i18n'
-
+import ElementLocale from 'element-ui/lib/locale'
+import zh from './zh.js'
+import en from './en.js'
 Vue.use(VueI18n)
 
 // 国际化
 const i18n = new VueI18n({
-  locale: 'zh', // set locale
+  locale: 'zh',
   messages: {
-    zh: require('./zh.js'), // 中文语言包
-    en: require('./en.js') // 英文语言包
+    zh,
+    en
   }
 })
+
+ElementLocale.i18n((key, value) => i18n.t(key, value))
 
 export default i18n

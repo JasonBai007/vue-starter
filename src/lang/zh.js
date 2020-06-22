@@ -1,4 +1,7 @@
-export const m = {
+import zhLocale from 'element-ui/lib/locale/lang/zh-CN'
+
+export default {
+  ...zhLocale,
   login: {
     introduction: '新项目快速启动模板',
     name_holder: '用户名',
