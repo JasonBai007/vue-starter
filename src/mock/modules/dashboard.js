@@ -1,6 +1,5 @@
 import Mock from 'mockjs'
-let debug = 1;
-if (debug) {
+if (process.env.NODE_ENV === 'development') {
   Mock.mock(/getKeyIndexData/, {
     code: 0,
     msg: "Success",

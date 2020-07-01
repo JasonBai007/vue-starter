@@ -59,3 +59,4 @@ yarn deploy
 6. assets/css/element-variables.scss 全局覆盖饿了么的样式变量。
 7. 个别页面设计风格抄袭了[Vuexy](https://pixinvent.com/demo/vuexy-vuejs-admin-dashboard-template/landing/)。
 8. 部署前，先修改 vue.config.js 里面的配置项 publicPath。
+9. 默认开发模式下，接口请求被mock.js拦截，可以修改/src/mock/modules/下面的文件

@@ -1,7 +1,6 @@
 import Mock from "mockjs";
 import qs from "qs";
-let debug = 1;
-if (debug) {
+if (process.env.NODE_ENV === 'development') {
   Mock.mock(/getTableData/, (options) => {
     // console.log(options);
     // {url: "api/v1/getTableData?currentPage=1&pageSize=10", type: "GET", body: null}

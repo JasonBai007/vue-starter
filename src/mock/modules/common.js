@@ -1,16 +1,15 @@
 import Mock from "mockjs";
-let debug = 1;
-if (debug) {
+if (process.env.NODE_ENV === 'development') {
   // 登录接口
   Mock.mock(/login/, {
     code: 0,
     msg: "Success",
     data: {
       userId: "@integer(1,10)",
-      "userName|1": ["Admin","Operators"],
+      "userName|1": ["Admin", "Operators"],
       token: "@string(30)"
     }
-  });  
+  });
 
   // 促销大区列表
   Mock.mock(/campaign/, {
