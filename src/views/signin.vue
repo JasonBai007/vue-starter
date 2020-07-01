@@ -33,27 +33,14 @@ import generateRoutes from "../router/parser";
 export default {
   name: "signin",
   data() {
-    // var checkone = (rule, value, callback) => {
+    // var checkPhone = (rule, value, callback) => {
     //   let regphone = /(^0{0,1}1[3|4|5|6|7|8|9][0-9]{9}$)/;
-    //   let regmail = /^[_\.0-9a-z-]+@([0-9a-z][0-9a-z-]+\.){1,4}[a-z]{2,3}$/;
     //   if (value === "") {
-    //     callback(new Error("请输入手机号/邮箱"));
+    //     callback(new Error("请输入"));
+    //   } else if (!regphone.test(Number(value))) {
+    //     callback(new Error("请输入正确格式的手机号"));
     //   } else {
-    //     if (!isNaN(value)) {dfa
-    //       if (!regphone.test(value)) {
-    //         callback(new Error("请输入正确手机号"));
-    //         return false;
-    //       }
-    //       callback();
-    //     }
-    //     if (value.indexOf("@") != -1) {
-    //       if (!regmail.test(value)) {
-    //         callback(new Error("请输入正确邮箱"));
-    //         return false;
-    //       }
-    //       callback();
-    //     }
-    //     callback(new Error("请输入正确手机/邮箱"));
+    //     callback();
     //   }
     // };
     return {
@@ -68,7 +55,7 @@ export default {
             required: true,
             message: this.$t("login.name_tip"),
             trigger: "blur"
-            // validator: checkone
+            // validator: checkPhone
           }
         ],
         password: [
