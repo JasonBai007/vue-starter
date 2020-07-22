@@ -1,5 +1,7 @@
 <template>
-  <div>You can start from here.</div>
+  <div>
+    <type str="You can start from here."></type>
+  </div>
 </template>
 
 <script>

@@ -36,6 +36,10 @@ import "./assets/scss/element-variables.scss";
 // 注册组件库
 Vue.use(ElementUI);
 
+// 引入打字效果全局组件
+import Type from '@/components/Type'
+Vue.use(Type)
+
 // 引入font-awsome图标库
 import "font-awesome/scss/font-awesome.scss";
 // 引入谷歌字体文件
