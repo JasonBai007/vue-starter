@@ -17,6 +17,10 @@
         <i class="el-icon-s-tools"></i>
         <span slot="title">人员管理</span>
       </el-menu-item>
+      <el-menu-item index="/infinite">
+        <i class="el-icon-s-tools"></i>
+        <span slot="title">无限滚动</span>
+      </el-menu-item>
       <el-menu-item index="/weather">
         <i class="el-icon-picture"></i>
         <span slot="title">气象信息</span>

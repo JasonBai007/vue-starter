@@ -42,6 +42,14 @@ const router = new Router({
           component: () => import("@/views/account"),
         },
         {
+          path: "infinite",
+          name: "infinite",
+          meta: {
+            title: "无限滚动",
+          },
+          component: () => import("@/views/infinite"),
+        },
+        {
           path: "weather",
           name: "weather",
           meta: {

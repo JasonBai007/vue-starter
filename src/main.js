@@ -47,6 +47,12 @@ import "font-awesome/scss/font-awesome.scss";
 // 引入谷歌字体文件
 import "@/assets/css/fonts.css";
 
+// 引入虚拟滚动插件（最多展示50万行数据）
+// https://github.com/Akryum/vue-virtual-scroller
+import VueVirtualScroller from 'vue-virtual-scroller'
+import 'vue-virtual-scroller/dist/vue-virtual-scroller.css'
+Vue.use(VueVirtualScroller)
+
 // 绑定中央事件总线
 Vue.prototype.$bus = new Vue();
 
