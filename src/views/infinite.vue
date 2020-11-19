@@ -1,11 +1,13 @@
 <template>
   <div class="infinite-wrap">
     <div class="btn-wrap">
-      <el-button @click="toggleLock" size="small" :icon="isLock?'el-icon-lock': 'el-icon-unlock'">{{isLock? 'Lock' : 'Free'}}</el-button>
+      <el-button type="primary" @click="toggleLock" size="small" :icon="isLock?'el-icon-lock': 'el-icon-unlock'">{{isLock? 'Lock' : 'Free'}}</el-button>
     </div>
-    <RecycleScroller class="scroller" :items="list" :item-size="itemHeight" key-field="id" v-slot="{ item }">
-      <div>{{ item.msg }}</div>
-    </RecycleScroller>
+    <el-card class="box-card">
+      <RecycleScroller class="scroller" :items="list" :item-size="itemHeight" key-field="id" v-slot="{ item }">
+        <div>{{ item.msg }}</div>
+      </RecycleScroller>
+    </el-card>
   </div>
 </template>
 
@@ -15,7 +17,7 @@ export default {
   data() {
     return {
       isLock: true,
-      itemHeight: 32, // 相当于行高
+      itemHeight: 30, // 相当于行高
       list: [],
       intervalId: "",
     };
@@ -54,6 +56,6 @@ export default {
   margin-bottom: 10px;
 }
 .scroller {
-  height: 67vh;
+  height: 60vh;
 }
 </style>

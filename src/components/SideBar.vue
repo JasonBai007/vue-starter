@@ -10,15 +10,15 @@
     <!-- 侧栏菜单 -->
     <el-menu :default-active="$route.path" :unique-opened="true" :router="true" :collapse="isFold">
       <el-menu-item index="/dashboard">
-        <i class="el-icon-menu"></i>
+        <i class="el-icon-s-data"></i>
         <span slot="title">Dashboard</span>
       </el-menu-item>
       <el-menu-item index="/account">
-        <i class="el-icon-s-tools"></i>
+        <i class="el-icon-user-solid"></i>
         <span slot="title">人员管理</span>
       </el-menu-item>
       <el-menu-item index="/infinite">
-        <i class="el-icon-s-tools"></i>
+        <i class="el-icon-s-help"></i>
         <span slot="title">无限滚动</span>
       </el-menu-item>
       <el-menu-item index="/weather">
@@ -27,7 +27,7 @@
       </el-menu-item>
       <el-submenu index>
         <template slot="title">
-          <i class="el-icon-s-data"></i>
+          <i class="el-icon-s-cooperation"></i>
           <span>其它页面</span>
         </template>
         <el-menu-item index="/others/blank">Blank</el-menu-item>
