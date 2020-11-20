@@ -7,6 +7,7 @@ import App from "./App";
 import router from "./router";
 import i18n from "./lang";
 import store from "./store";
+import '@/directives';
 
 // 引入封装的请求模块并绑定
 import http from "./http";

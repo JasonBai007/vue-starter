@@ -46,3 +46,28 @@ Vue.directive('count', {
     }
   }
 });
+
+// 实现拖拽功能
+Vue.directive('drag', {
+  bind(el, binding) {
+    el.style.position = 'fixed';
+    el.style.left = binding.value[0];
+    el.style.top = binding.value[1];
+  },
+  inserted(el, binding) {
+    el.onmousedown = e => {
+      let gapX = el.getBoundingClientRect().width / 2
+      let gapY = el.getBoundingClientRect().height / 2
+      el.onmousemove = e => {
+        el.style.left = `${e.clientX - gapX}px`;
+        el.style.top = `${e.clientY - gapY}px`;
+      }
+    }
+    el.onmouseup = e => {
+      el.onmousemove = null;
+    }
+    el.onmouseout = e => {
+      el.onmousemove = null;
+    }
+  }
+});

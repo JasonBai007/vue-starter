@@ -1,18 +1,20 @@
 <template>
   <div>
     <!-- 侧导航 -->
-    <side-bar></side-bar>
+    <sideBar />
     <div class="con-wrap" :class="{conCollapse: isCollapse}">
       <!-- 顶部导航 -->
-      <top-bar></top-bar>
+      <topBar />
       <!-- 面包屑 -->
-      <bread v-if="$route.path !== '/dashboard'"></bread>
+      <bread v-if="$route.path !== '/dashboard'" />
       <!-- 右侧主体页面部分 -->
       <transition name="slide-fade">
         <router-view class="page-component-wrap"></router-view>
       </transition>
       <!-- 页脚 -->
-      <v-footer />
+      <Footer />
+      <!-- 播放器 -->
+      <player />
     </div>
   </div>
 </template>
@@ -21,19 +23,21 @@ import TopBar from "@/components/TopBar";
 import SideBar from "@/components/SideBar";
 import Bread from "@/components/Bread";
 import Footer from "@/components/Footer";
+import Player from "@/components/Player";
 export default {
   name: "layout",
+  components: {
+    Bread,
+    TopBar,
+    SideBar,
+    Footer,
+    Player,
+  },
   computed: {
     isCollapse() {
       return this.$store.state.common.isCollapse;
-    }
+    },
   },
-  components: {
-    Bread,
-    "top-bar": TopBar,
-    "side-bar": SideBar,
-    "v-footer": Footer
-  }
 };
 </script>
 <style lang="scss" scoped>
@@ -48,7 +52,7 @@ export default {
     color: #324157;
   }
   .page-component-wrap {
-    padding: 15px 15px 60px 15px; 
+    padding: 15px 15px 60px 15px;
   }
 }
 .con-wrap.conCollapse {
