@@ -58,16 +58,13 @@ Vue.directive('drag', {
     el.onmousedown = e => {
       let gapX = el.getBoundingClientRect().width / 2
       let gapY = el.getBoundingClientRect().height / 2
-      el.onmousemove = e => {
+      document.onmousemove = e => {
         el.style.left = `${e.clientX - gapX}px`;
         el.style.top = `${e.clientY - gapY}px`;
       }
     }
     el.onmouseup = e => {
-      el.onmousemove = null;
-    }
-    el.onmouseout = e => {
-      el.onmousemove = null;
-    }
+      document.onmousemove = null;
+    }    
   }
 });
