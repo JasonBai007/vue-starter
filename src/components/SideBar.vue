@@ -31,6 +31,7 @@
           <span>其它页面</span>
         </template>
         <el-menu-item index="/others/blank">Blank</el-menu-item>
+        <el-menu-item index="/others/coming">Coming</el-menu-item>
         <el-menu-item index="/401">401</el-menu-item>
       </el-submenu>
     </el-menu>

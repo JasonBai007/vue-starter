@@ -73,6 +73,14 @@ const router = new Router({
               },
               component: () => import("@/views/blank"),
             },
+            {
+              path: "coming",
+              name: "coming",
+              meta: {
+                title: "敬请期待",
+              },
+              component: () => import("@/views/coming"),
+            },
           ],
         },
       ],

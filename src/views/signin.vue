@@ -46,7 +46,7 @@ export default {
     return {
       form: {
         name: localStorage.userInfo || "admin",
-        password: localStorage.passwordInfo || "654321"
+        password: localStorage.passwordInfo || "654321",
       },
       isMemery: false,
       rules: {
@@ -54,30 +54,30 @@ export default {
           {
             required: true,
             message: this.$t("login.name_tip"),
-            trigger: "blur"
+            trigger: "blur",
             // validator: checkPhone
-          }
+          },
         ],
         password: [
           {
             required: true,
             message: this.$t("login.password_tip"),
-            trigger: "blur"
-          }
-        ]
-      }
+            trigger: "blur",
+          },
+        ],
+      },
     };
   },
   methods: {
     Login(formName) {
-      this.$refs[formName].validate(valid => {
+      this.$refs[formName].validate((valid) => {
         if (valid) {
           this.$http
             .post("login", {
               username: this.form.name,
-              password: this.form.password
+              password: this.form.password,
             })
-            .then(res => {
+            .then((res) => {
               localStorage.userName = res.data.data.userName;
               localStorage.userId = res.data.data.userId;
               localStorage.token = res.data.data.token;
@@ -91,7 +91,7 @@ export default {
     openMsg() {
       // 注意这里使用了国际化
       this.$message.warning(this.$t("login.info"));
-    }
+    },
   },
   watch: {
     // isMemery(n, o) {
@@ -103,7 +103,7 @@ export default {
     //     localStorage.removeItem("passwordInfo");
     //   }
     // }
-  }
+  },
 };
 </script>
 <style scoped lang="scss">
@@ -145,6 +145,7 @@ export default {
       text-align: center;
       margin: 0;
       letter-spacing: 1px;
+      color: #666;
     }
     form {
       margin-top: 25px;
