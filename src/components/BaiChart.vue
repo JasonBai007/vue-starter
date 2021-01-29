@@ -5,17 +5,7 @@
   </div>
 </template>
 <script>
-// 引入基本模板
-let echarts = require("echarts/lib/echarts");
-// 引入折线图组件
-require("echarts/lib/chart/line");
-require("echarts/lib/chart/bar");
-// 引入提示框和图例组件
-require("echarts/lib/component/title");
-require("echarts/lib/component/tooltip");
-require("echarts/lib/component/toolbox");
-require("echarts/lib/component/legend");
-
+// 已在html里引入了echarts最新版CDN
 export default {
   name: "bai-chart",
   myChart: null,
