@@ -4,12 +4,7 @@
       <el-col :span="2" class="sel-label">选择城市：</el-col>
       <el-col :span="3">
         <el-select v-model="sel" filterable placeholder="请选择城市" @change="getData">
-          <el-option
-            v-for="(item,index) in options"
-            :label="item.label"
-            :value="item.value"
-            :key="index"
-          ></el-option>
+          <el-option v-for="(item,index) in options" :label="item.label" :value="item.value" :key="index"></el-option>
         </el-select>
       </el-col>
     </el-row>
@@ -30,7 +25,7 @@
           <el-card class="box-card">
             <div class="animated fadeIn">
               <!-- 图表组件 -->
-              <bai-chart :chartData="chartData"></bai-chart>
+              <bai-chart ref="weatherChart"></bai-chart>
             </div>
           </el-card>
         </el-col>
@@ -50,7 +45,7 @@ import jsonp from "jsonp";
 export default {
   name: "weather",
   components: {
-    BaiChart
+    BaiChart,
   },
   data() {
     return {
@@ -59,14 +54,13 @@ export default {
         wendu: "",
         forecast: [
           {
-            type: ""
-          }
+            type: "",
+          },
         ],
-        ganmao: ""
+        ganmao: "",
       },
       options: arr,
       sel: "101010100",
-      chartData: {}
     };
   },
   mounted() {
@@ -96,20 +90,20 @@ export default {
           text: "近五天气温走势",
           x: "center",
           textStyle: {
-            color: "#666"
-          }
+            color: "#666",
+          },
         },
         grid: {
           top: "15%",
           left: "1%",
           right: "1%",
           bottom: "12%",
-          containLabel: true
+          containLabel: true,
         },
         tooltip: {
           trigger: "axis",
           // 猜测文档中 a b c d 的时候到了
-          formatter: "{b}: <br /> {a0}: {c0}℃ <br /> {a1}: {c1}℃"
+          formatter: "{b}: <br /> {a0}: {c0}℃ <br /> {a1}: {c1}℃",
         },
         toolbox: {
           show: true,
@@ -119,57 +113,57 @@ export default {
             dataView: { readOnly: false },
             magicType: { type: ["line", "bar"] },
             dataZoom: {
-              yAxisIndex: "none"
+              yAxisIndex: "none",
             },
             restore: {},
-            saveAsImage: {}
-          }
+            saveAsImage: {},
+          },
         },
         legend: {
           bottom: 0,
-          data: ["最高气温", "最低气温"]
+          data: ["最高气温", "最低气温"],
         },
         xAxis: {
-          data: data.map(v => v.date)
+          data: data.map((v) => v.date),
         },
         yAxis: {
           type: "value",
           axisLabel: {
-            formatter: "{value} °C"
-          }
+            formatter: "{value} °C",
+          },
         },
         series: [
           {
             name: "最高气温",
             type: "line",
             smooth: true,
-            data: data.map(v => v.high.match(/-|\d+/g).join("")),
+            data: data.map((v) => v.high.match(/-|\d+/g).join("")),
             label: {
               normal: {
                 show: true,
                 position: "top",
-                formatter: "{c}℃"
-              }
-            }
+                formatter: "{c}℃",
+              },
+            },
           },
           {
             name: "最低气温",
             type: "line",
             smooth: true,
-            data: data.map(v => v.low.match(/-|\d+/g).join("")),
+            data: data.map((v) => v.low.match(/-|\d+/g).join("")),
             label: {
               normal: {
                 show: true,
                 position: "top",
-                formatter: "{c}℃"
-              }
-            }
-          }
-        ]
+                formatter: "{c}℃",
+              },
+            },
+          },
+        ],
       };
-      this.chartData = opts;
-    }
-  }
+      this.$refs.weatherChart.renderChart(opts);
+    },
+  },
 };
 </script>
 <style scoped lang="scss">
