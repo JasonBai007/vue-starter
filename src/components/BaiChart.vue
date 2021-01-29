@@ -7,7 +7,7 @@
 <script>
 // 已在html里引入了echarts最新版CDN
 export default {
-  name: "bai-chart",
+  name: "baiChart",
   myChart: null,
   data() {
     return {};
