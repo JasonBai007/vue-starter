@@ -13,8 +13,6 @@
       </transition>
       <!-- 页脚 -->
       <Footer />
-      <!-- 播放器 -->
-      <player />
     </div>
   </div>
 </template>
@@ -23,7 +21,6 @@ import TopBar from "@/components/TopBar";
 import SideBar from "@/components/SideBar";
 import Bread from "@/components/Bread";
 import Footer from "@/components/Footer";
-import Player from "@/components/Player";
 export default {
   name: "layout",
   components: {
@@ -31,7 +28,6 @@ export default {
     TopBar,
     SideBar,
     Footer,
-    Player,
   },
   computed: {
     isCollapse() {
