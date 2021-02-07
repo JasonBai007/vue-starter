@@ -99,3 +99,18 @@ http {
     }
 }
 ```
+
+### 7、Websocket 超过1分钟中断问题
+
+有很多策略，参考这篇文章：https://juejin.im/post/5cae9de95188251ae2324ec3#heading-7
+
+```bash
+server {
+    # 匹配 ws 链接
+    location /ws {
+        proxy_connect_timeout 75s; # 最长75秒
+        proxy_read_timeout 600s; # 如果后端数据超过10分钟，再中断，默认60s
+        proxy_send_timeout 600s; # 前端超过10分钟才发送数据，就会中断，默认60s
+    }
+}
+```
