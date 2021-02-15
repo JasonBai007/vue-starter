@@ -2,7 +2,6 @@
   <section>
     <div class="item" v-for="(item,index) in $attrs.data" :key="index">
       <countTo class="num" :startVal="0" :endVal="item.num" :duration="3000"></countTo>
-      <div class="title">{{item.title}}</div>
     </div>
   </section>
 </template>
@@ -14,7 +13,7 @@ export default {
   components: { countTo },
   data() {
     return {};
-  }
+  },
 };
 </script>
 
@@ -34,10 +33,6 @@ section {
     .num {
       font-size: 30px;
       color: #7367f0;
-    }
-    .title {
-      margin-top: 7px;
-      font-size: 12px;
     }
   }
 }

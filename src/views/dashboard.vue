@@ -16,11 +16,11 @@ import KeyIndex from "@/components/KeyIndex";
 export default {
   name: "dashboard",
   components: {
-    KeyIndex
+    KeyIndex,
   },
   data() {
     return {
-      keyIndexArr: []
+      keyIndexArr: [],
     };
   },
   mounted() {
@@ -28,9 +28,10 @@ export default {
   },
   methods: {
     async getKeyIndexData() {
-      this.keyIndexArr = await this.$http.get("getKeyIndexData");
-    }
-  }
+      let res = await this.$http.get("getKeyIndexData");
+      this.keyIndexArr = res.data.data;
+    },
+  },
 };
 </script>
 
