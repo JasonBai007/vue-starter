@@ -17,6 +17,14 @@ const router = new Router({
       component: () => import("@/views/signin"),
     },
     {
+      path: "/login",
+      name: "login",
+      meta: {
+        title: "Vue Starter",
+      },
+      component: () => import("@/views/login"),
+    },
+    {
       path: "/",
       name: "home",
       meta: {
