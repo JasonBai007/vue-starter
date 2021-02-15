@@ -9,10 +9,6 @@ import i18n from "./lang";
 import store from "./store";
 import '@/directives';
 
-// 引入全局websocket模块
-import ws from "./ws";
-Vue.prototype.$ws = ws;
-
 // 引入封装的请求模块并绑定
 import http from "./http";
 Vue.prototype.$http = http;
