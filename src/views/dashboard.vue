@@ -29,7 +29,7 @@ export default {
   methods: {
     async getKeyIndexData() {
       let res = await this.$http.get("getKeyIndexData");
-      this.keyIndexArr = res.data.data;
+      this.keyIndexArr = res.data;
     },
   },
 };

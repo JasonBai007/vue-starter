@@ -27,7 +27,8 @@ http.interceptors.request.use(
 // 响应拦截器
 http.interceptors.response.use(
   (response) => {
-    return response;
+    // 提取返回数据中的data部分
+    return response.data;
   },
   (error) => {
     if (error.response) {

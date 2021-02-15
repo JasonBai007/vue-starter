@@ -101,8 +101,8 @@ export default {
           pageSize: this.paginationData.pageSize
         }
       });
-      this.tableData = res.data.data.list;
-      this.paginationData.total = res.data.data.total;
+      this.tableData = res.data.list;
+      this.paginationData.total = res.data.total;
     },
     resetForm() {
       this.formData = {

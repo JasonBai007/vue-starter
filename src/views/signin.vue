@@ -78,9 +78,9 @@ export default {
               password: this.form.password,
             })
             .then((res) => {
-              localStorage.userName = res.data.data.userName;
-              localStorage.userId = res.data.data.userId;
-              localStorage.token = res.data.data.token;
+              localStorage.userName = res.data.userName;
+              localStorage.userId = res.data.userId;
+              localStorage.token = res.data.token;
               this.$router.push("/dashboard");
             });
         } else {

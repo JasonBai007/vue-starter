@@ -19,7 +19,7 @@ export default {
   methods: {
     async getCampaignList() {
       const res = await this.$http.get("campaign");
-      this.options = res.data.data;
+      this.options = res.data;
     }
   }
 };
