@@ -8,23 +8,29 @@
     </div>
     <div class="right">
       <div class="inner-wrap">
-        <h3>Vue Starter2</h3>
-        <p>{{$t('login.introduction')}}</p>
-        <el-form ref="form" :model="form" :rules="rules" label-width="0px" size="small">
-          <el-form-item prop="name">
-            <el-input :placeholder="$t('login.name_holder')" v-model="form.name" clearable></el-input>
+        <h3>Welcome to Vue Starter 👋</h3>
+        <p class="subtitle">Please sign-in to your account and start the adventure</p>
+        <el-form ref="form" :model="form" :rules="rules" :label-position="top">
+          <el-form-item label="User Name" prop="name">
+            <el-input placeholder="Jason@example.com" v-model="form.name" clearable></el-input>
           </el-form-item>
-          <el-form-item prop="password">
-            <el-input :placeholder="$t('login.password_holder')" v-model="form.password" type="password" clearable></el-input>
+          <el-form-item label="Password" prop="password">
+            <el-input placeholder="Password" v-model="form.password" type="password" clearable></el-input>
           </el-form-item>
-          <!-- <el-form-item>
-          <el-row type="flex" justify="space-between">
-            <el-checkbox v-model="isMemery" style="color:#eee">{{$t('login.remember')}}</el-checkbox>
-            <a href @click.prevent="openMsg" style="color:#eee">{{$t('login.forget')}}</a>
-          </el-row>
-          </el-form-item>-->
           <el-form-item>
-            <el-button type="primary" size="small" @click="Login('form')">{{$t('login.button')}}</el-button>
+            <el-row type="flex" justify="space-between">
+              <el-checkbox v-model="isMemery">Remember Me</el-checkbox>
+              <router-link to="/forgot-password">Forgot Password?</router-link>
+            </el-row>
+          </el-form-item>
+          <el-form-item>
+            <el-button type="primary" @click="Login('form')">Sign in</el-button>
+          </el-form-item>
+          <el-form-item>
+            <p class="new">
+              New on our platform?
+              <router-link to="/register">Create an account</router-link>
+            </p>
           </el-form-item>
         </el-form>
       </div>
@@ -93,10 +99,6 @@ export default {
         }
       });
     },
-    openMsg() {
-      // 注意这里使用了国际化
-      this.$message.warning(this.$t("login.info"));
-    },
   },
   watch: {
     // isMemery(n, o) {
@@ -146,39 +148,44 @@ export default {
       width: 70%;
     }
     .el-form-item {
-      margin-bottom: 25px !important;
+      // margin-bottom: 25px !important;
     }
     h3 {
-      text-align: center;
       margin-top: 0px;
-      margin-bottom: 5px;
+      margin-bottom: 15px;
       font-size: 22px;
-      color: #2c2c2c;
-      font-weight: 600;
+      color: #5e5873;
+      font-weight: 500;
     }
-    p {
-      text-align: center;
+    .subtitle {
       margin: 0;
+      font-size: 14px;
       letter-spacing: 1px;
-      color: #666;
+      line-height: 22px;
+      color: #6e6b7b;
     }
     form {
       margin-top: 25px;
       .el-form-item {
-        margin-bottom: 15px;
+        margin-bottom: 12px;
       }
     }
     a {
       text-decoration: none;
-      color: #1f2d3d;
+      color: #7367f0;
     }
     button {
       width: 100%;
-      font-weight: 600;
       border: none;
-      margin-top: 20px;
       background-color: #7367f0;
       transition: all 0.2s ease;
+    }
+    .new {
+      margin-bottom: 0;
+      font-size: 14px;
+      line-height: 22px;
+      color: #6e6b7b;
+      text-align: center;
     }
   }
 }
