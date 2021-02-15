@@ -19,8 +19,7 @@
           </el-form-item>
           <el-form-item>
             <p class="new">
-              New on our platform?
-              <router-link to="/register">Create an account</router-link>
+              <router-link to="/login">< Back to login</router-link>
             </p>
           </el-form-item>
         </el-form>
@@ -108,9 +107,6 @@ export default {
       margin: auto;
       width: 70%;
     }
-    .el-form-item {
-      // margin-bottom: 25px !important;
-    }
     h3 {
       margin-top: 0px;
       margin-bottom: 15px;
@@ -127,9 +123,6 @@ export default {
     }
     form {
       margin-top: 25px;
-      .el-form-item {
-        // margin-bottom: 12px;
-      }
     }
     a {
       text-decoration: none;
@@ -142,7 +135,7 @@ export default {
       transition: all 0.2s ease;
     }
     .new {
-      margin-bottom: 0;
+      margin: 0;
       font-size: 14px;
       line-height: 22px;
       color: #6e6b7b;
