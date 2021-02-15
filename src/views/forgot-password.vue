@@ -8,23 +8,14 @@
     </div>
     <div class="right">
       <div class="inner-wrap">
-        <h3>Welcome to Vue Starter 👋</h3>
-        <p class="subtitle">Please sign-in to your account and start the adventure</p>
+        <h3>Forgot Password? 🔒</h3>
+        <p class="subtitle">Enter your email and we'll send you instructions to reset your password</p>
         <el-form ref="form" :model="form" :rules="rules" :label-position="top">
-          <el-form-item label="User Name" prop="name">
-            <el-input placeholder="Jason@example.com" v-model="form.name" clearable></el-input>
-          </el-form-item>
-          <el-form-item label="Password" prop="password">
-            <el-input placeholder="Password" v-model="form.password" type="password" clearable></el-input>
+          <el-form-item label="Email" prop="email">
+            <el-input placeholder="Jason@example.com" v-model="form.email" clearable></el-input>
           </el-form-item>
           <el-form-item>
-            <el-row type="flex" justify="space-between">
-              <el-checkbox v-model="isMemery">Remember Me</el-checkbox>
-              <router-link to="/forgot-password">Forgot Password?</router-link>
-            </el-row>
-          </el-form-item>
-          <el-form-item>
-            <el-button type="primary" @click="Login('form')">Sign in</el-button>
+            <el-button type="primary" @click="Login('form')">Send reset link</el-button>
           </el-form-item>
           <el-form-item>
             <p class="new">
@@ -39,10 +30,8 @@
 </template>
 <script>
 import Vue from "vue";
-import router from "../router/index";
-import generateRoutes from "../router/parser";
 export default {
-  name: "signin",
+  name: "forgot-password",
   data() {
     // var checkPhone = (rule, value, callback) => {
     //   let regphone = /(^0{0,1}1[3|4|5|6|7|8|9][0-9]{9}$)/;
@@ -56,24 +45,15 @@ export default {
     // };
     return {
       form: {
-        name: localStorage.userInfo || "admin",
-        password: localStorage.passwordInfo || "654321",
+        email: "",
       },
-      isMemery: false,
       rules: {
-        name: [
+        email: [
           {
             required: true,
-            message: "The User Name field is required",
+            message: "The Email field is required",
             trigger: "blur",
             // validator: checkPhone
-          },
-        ],
-        password: [
-          {
-            required: true,
-            message: "The Password field is required",
-            trigger: "blur",
           },
         ],
       },
@@ -83,33 +63,14 @@ export default {
     Login(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          this.$http
-            .post("login", {
-              username: this.form.name,
-              password: this.form.password,
-            })
-            .then((res) => {
-              localStorage.userName = res.data.userName;
-              localStorage.userId = res.data.userId;
-              localStorage.token = res.data.token;
-              this.$router.push("/dashboard");
-            });
+          this.$http.post("forgot-password", this.form.email).then((res) => {
+            this.$router.push("/dashboard");
+          });
         } else {
           return false;
         }
       });
     },
-  },
-  watch: {
-    // isMemery(n, o) {
-    //   if (n) {
-    //     localStorage.userInfo = this.form.name;
-    //     localStorage.passwordInfo = this.form.password;
-    //   } else {
-    //     localStorage.removeItem("userInfo");
-    //     localStorage.removeItem("passwordInfo");
-    //   }
-    // }
   },
 };
 </script>
@@ -120,8 +81,8 @@ export default {
   .left {
     width: 67%;
     height: 100vh;
-    background: #fafafa url("../assets/img/login-bg.svg") no-repeat center
-      center / 72%;
+    background: #fafafa url("../assets/img/forgot-password.svg") no-repeat
+      center center / 63%;
     .logo-wrap {
       position: absolute;
       top: 4vh;
@@ -167,7 +128,7 @@ export default {
     form {
       margin-top: 25px;
       .el-form-item {
-        margin-bottom: 12px;
+        // margin-bottom: 12px;
       }
     }
     a {

@@ -25,6 +25,14 @@ const router = new Router({
       component: () => import("@/views/login"),
     },
     {
+      path: "/forgot-password",
+      name: "forgot-password",
+      meta: {
+        title: "Vue Starter",
+      },
+      component: () => import("@/views/forgot-password"),
+    },
+    {
       path: "/",
       name: "home",
       meta: {
