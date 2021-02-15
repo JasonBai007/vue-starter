@@ -10,7 +10,7 @@
       <div class="inner-wrap">
         <h3>Welcome to Vue Starter 👋</h3>
         <p class="subtitle">Please sign-in to your account and start the adventure</p>
-        <el-form ref="form" :model="form" :rules="rules" :label-position="top">
+        <el-form ref="form" :model="form" :rules="rules" label-position="top">
           <el-form-item label="User Name" prop="name">
             <el-input placeholder="Jason@example.com" v-model="form.name" clearable></el-input>
           </el-form-item>
@@ -38,11 +38,8 @@
   </div>
 </template>
 <script>
-import Vue from "vue";
-import router from "../router/index";
-import generateRoutes from "../router/parser";
 export default {
-  name: "signin",
+  name: "login",
   data() {
     // var checkPhone = (rule, value, callback) => {
     //   let regphone = /(^0{0,1}1[3|4|5|6|7|8|9][0-9]{9}$)/;
@@ -99,17 +96,6 @@ export default {
         }
       });
     },
-  },
-  watch: {
-    // isMemery(n, o) {
-    //   if (n) {
-    //     localStorage.userInfo = this.form.name;
-    //     localStorage.passwordInfo = this.form.password;
-    //   } else {
-    //     localStorage.removeItem("userInfo");
-    //     localStorage.removeItem("passwordInfo");
-    //   }
-    // }
   },
 };
 </script>

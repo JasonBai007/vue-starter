@@ -7,15 +7,7 @@ Vue.use(Router);
 // 添加 keepAlive 来控制是否需要缓存
 const router = new Router({
   routes: [
-    // 首先是登录页的路由
-    {
-      path: "/signin",
-      name: "signin",
-      meta: {
-        title: "Vue Starter",
-      },
-      component: () => import("@/views/signin"),
-    },
+    // 首先是登录页的路由    
     {
       path: "/login",
       name: "login",
@@ -125,7 +117,7 @@ router.beforeEach((to, from, next) => {
   document.title = to.meta.title;
   next();
   // 如果已经登录，并且要去登录页，就不让TA去登录页，重定向到首页
-  // if (to.path === "/signin" && localStorage.token) {
+  // if (to.path === "/login" && localStorage.token) {
   //   next("/dashboard");
   // } else {
   //   next();
