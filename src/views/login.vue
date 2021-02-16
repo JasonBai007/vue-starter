@@ -11,8 +11,8 @@
         <h3>Welcome to Vue Starter 👋</h3>
         <p class="subtitle">Please sign-in to your account and start the adventure</p>
         <el-form ref="form" :model="form" :rules="rules" label-position="top">
-          <el-form-item label="User Name" prop="name">
-            <el-input placeholder="Jason@example.com" v-model="form.name" clearable></el-input>
+          <el-form-item label="Username" prop="username">
+            <el-input placeholder="Jason" v-model="form.username" clearable></el-input>
           </el-form-item>
           <el-form-item label="Password" prop="password">
             <el-input placeholder="Password" v-model="form.password" type="password" clearable></el-input>
@@ -44,24 +44,24 @@ export default {
     // var checkPhone = (rule, value, callback) => {
     //   let regphone = /(^0{0,1}1[3|4|5|6|7|8|9][0-9]{9}$)/;
     //   if (value === "") {
-    //     callback(new Error("请输入"));
+    //     callback(new Error("The Username field is required"));
     //   } else if (!regphone.test(Number(value))) {
-    //     callback(new Error("请输入正确格式的手机号"));
+    //     callback(new Error("The Username field must be a valid phone number"));
     //   } else {
     //     callback();
     //   }
     // };
     return {
       form: {
-        name: localStorage.userInfo || "admin",
+        username: localStorage.userInfo || "admin",
         password: localStorage.passwordInfo || "654321",
       },
       isMemery: false,
       rules: {
-        name: [
+        username: [
           {
             required: true,
-            message: "The User Name field is required",
+            message: "The Username field is required",
             trigger: "blur",
             // validator: checkPhone
           },
@@ -80,17 +80,12 @@ export default {
     Login(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          this.$http
-            .post("login", {
-              username: this.form.name,
-              password: this.form.password,
-            })
-            .then((res) => {
-              localStorage.userName = res.data.userName;
-              localStorage.userId = res.data.userId;
-              localStorage.token = res.data.token;
-              this.$router.push("/dashboard");
-            });
+          this.$http.post("login", this.form).then((res) => {
+            localStorage.userName = res.data.userName;
+            localStorage.userId = res.data.userId;
+            localStorage.token = res.data.token;
+            this.$router.push("/dashboard");
+          });
         } else {
           return false;
         }
@@ -133,9 +128,6 @@ export default {
       margin: auto;
       width: 70%;
     }
-    .el-form-item {
-      // margin-bottom: 25px !important;
-    }
     h3 {
       margin-top: 0px;
       margin-bottom: 15px;
@@ -174,5 +166,11 @@ export default {
       text-align: center;
     }
   }
+}
+::v-deep .el-form--label-top .el-form-item__label {
+  padding: 0;
+}
+::v-deep .el-checkbox__label {
+  font-weight: normal;
 }
 </style>

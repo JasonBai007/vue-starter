@@ -13,7 +13,7 @@ module.exports = {
   productionSourceMap: false,
   devServer: {
     host: '0.0.0.0',
-    openPage: "#/signin",
+    openPage: "#/login",
     port: 8080, // 配置端口号
     // 配置多个代理
     proxy: {

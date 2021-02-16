@@ -8,20 +8,30 @@
     </div>
     <div class="right">
       <div class="inner-wrap">
-        <h3>Forgot Password? 🔒</h3>
-        <p class="subtitle">Enter your email and we'll send you instructions to reset your password</p>
+        <h3>Adventure starts here 🚀</h3>
+        <p class="subtitle">Make your app management easy and fun!</p>
         <el-form ref="form" :model="form" :rules="rules" label-position="top">
+          <el-form-item label="Username" prop="username">
+            <el-input placeholder="Jason" v-model="form.username" clearable></el-input>
+          </el-form-item>
           <el-form-item label="Email" prop="email">
             <el-input placeholder="Jason@example.com" v-model="form.email" clearable></el-input>
           </el-form-item>
+          <el-form-item label="Password" prop="password">
+            <el-input placeholder="Password" v-model="form.password" type="password" clearable></el-input>
+          </el-form-item>
           <el-form-item>
-            <el-button type="primary" @click="sendEmail('form')">Send reset link</el-button>
+            <el-row type="flex" justify="space-between">
+              <el-checkbox v-model="isAgree">I agree to privacy policy & terms</el-checkbox>
+            </el-row>
+          </el-form-item>
+          <el-form-item>
+            <el-button type="primary" @click="Register('form')">Sign up</el-button>
           </el-form-item>
           <el-form-item>
             <p class="new">
-              <router-link to="/login">
-                <i class="el-icon-arrow-left"></i> Back to login
-              </router-link>
+              Already have an account?
+              <router-link to="/login">Sign in instead</router-link>
             </p>
           </el-form-item>
         </el-form>
@@ -31,7 +41,7 @@
 </template>
 <script>
 export default {
-  name: "forgot-password",
+  name: "register",
   data() {
     // 验证邮箱格式
     var checkEmail = (rule, value, callback) => {
@@ -46,9 +56,19 @@ export default {
     };
     return {
       form: {
+        username: "",
         email: "",
+        password: "",
       },
+      isAgree: false,
       rules: {
+        username: [
+          {
+            required: true,
+            message: "The Username field is required",
+            trigger: "blur",
+          },
+        ],
         email: [
           {
             required: true,
@@ -56,15 +76,22 @@ export default {
             validator: checkEmail,
           },
         ],
+        password: [
+          {
+            required: true,
+            message: "The Password field is required",
+            trigger: "blur",
+          },
+        ],
       },
     };
   },
   methods: {
-    sendEmail(formName) {
+    Register(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          this.$http.post("forgot-password", this.form).then((res) => {
-            // this.$router.push("/dashboard");
+          this.$http.post("login", this.form).then((res) => {
+            this.$router.push("/dashboard");
           });
         } else {
           return false;
@@ -81,8 +108,8 @@ export default {
   .left {
     width: 67%;
     height: 100vh;
-    background: #fafafa url("../assets/img/forgot-password.svg") no-repeat
-      center center / 63%;
+    background: #fafafa url("../assets/img/login-bg.svg") no-repeat center
+      center / 72%;
     .logo-wrap {
       position: absolute;
       top: 4vh;
@@ -118,11 +145,15 @@ export default {
     .subtitle {
       margin: 0;
       font-size: 14px;
+      letter-spacing: 1px;
       line-height: 22px;
       color: #6e6b7b;
     }
     form {
       margin-top: 25px;
+      .el-form-item {
+        margin-bottom: 12px;
+      }
     }
     a {
       text-decoration: none;
@@ -135,7 +166,7 @@ export default {
       transition: all 0.2s ease;
     }
     .new {
-      margin: 0;
+      margin-bottom: 0;
       font-size: 14px;
       line-height: 22px;
       color: #6e6b7b;
@@ -145,5 +176,8 @@ export default {
 }
 ::v-deep .el-form--label-top .el-form-item__label {
   padding: 0;
+}
+::v-deep .el-checkbox__label {
+  font-weight: normal;
 }
 </style>

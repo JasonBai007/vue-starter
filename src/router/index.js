@@ -17,6 +17,14 @@ const router = new Router({
       component: () => import("@/views/login"),
     },
     {
+      path: "/register",
+      name: "register",
+      meta: {
+        title: "Vue Starter",
+      },
+      component: () => import("@/views/register"),
+    },
+    {
       path: "/forgot-password",
       name: "forgot-password",
       meta: {
