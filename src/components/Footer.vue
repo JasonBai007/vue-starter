@@ -12,7 +12,7 @@
 </template>
 <style lang="scss" scoped>
 footer {
-  width: calc(100% - 180px);
+  width: calc(100% - 200px);
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;

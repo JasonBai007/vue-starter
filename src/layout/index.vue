@@ -41,7 +41,7 @@ export default {
   position: relative;
   background: #f8f8f8;
   min-height: 100vh;
-  padding-left: 180px;
+  padding-left: 200px;
   transition: all 0.3s;
   h3 {
     margin-top: 0;

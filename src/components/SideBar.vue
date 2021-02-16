@@ -60,7 +60,7 @@ export default {
 </script>
 <style scoped lang="scss">
 #sidebar-wrap {
-  width: 180px;
+  width: 200px;
   height: 100%;
   position: fixed;
   left: 0;
