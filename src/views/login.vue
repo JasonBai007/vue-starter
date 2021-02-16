@@ -15,7 +15,9 @@
             <el-input placeholder="Jason" v-model="form.username" clearable></el-input>
           </el-form-item>
           <el-form-item label="Password" prop="password">
-            <el-input placeholder="Password" v-model="form.password" type="password" clearable></el-input>
+            <el-input placeholder="Password" v-model="form.password" :type="isVisible? 'text': 'password'">
+              <i slot="suffix" class="el-input__icon el-icon-view" @mousedown="isVisible=true" @mouseup="isVisible=false"></i>
+            </el-input>
           </el-form-item>
           <el-form-item>
             <el-row type="flex" justify="space-between">
@@ -52,11 +54,12 @@ export default {
     //   }
     // };
     return {
+      isMemery: false,
+      isVisible: false,
       form: {
         username: localStorage.userInfo || "admin",
         password: localStorage.passwordInfo || "654321",
       },
-      isMemery: false,
       rules: {
         username: [
           {
@@ -101,8 +104,8 @@ export default {
   .left {
     width: 67%;
     height: 100vh;
-    background: #f8f8f8 url("../assets/img/login.svg") no-repeat center
-      center / 72%;
+    background: #f8f8f8 url("../assets/img/login.svg") no-repeat center center /
+      72%;
     .logo-wrap {
       position: absolute;
       top: 4vh;
@@ -146,6 +149,10 @@ export default {
       margin-top: 25px;
       .el-form-item {
         margin-bottom: 12px;
+        .el-icon-view:hover {
+          cursor: pointer;
+          color: #666;
+        }
       }
     }
     a {

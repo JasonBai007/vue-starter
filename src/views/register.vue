@@ -18,7 +18,9 @@
             <el-input placeholder="Jason@example.com" v-model="form.email" clearable></el-input>
           </el-form-item>
           <el-form-item label="Password" prop="password">
-            <el-input placeholder="Password" v-model="form.password" type="password" clearable></el-input>
+            <el-input placeholder="Password" v-model="form.password" :type="isVisible? 'text': 'password'">
+              <i slot="suffix" class="el-input__icon el-icon-view" @mousedown="isVisible=true" @mouseup="isVisible=false"></i>
+            </el-input>
           </el-form-item>
           <el-form-item>
             <el-row type="flex" justify="space-between">
@@ -55,12 +57,13 @@ export default {
       }
     };
     return {
+      isAgree: false,
+      isVisible: false,
       form: {
         username: "",
         email: "",
         password: "",
       },
-      isAgree: false,
       rules: {
         username: [
           {
@@ -153,6 +156,10 @@ export default {
       margin-top: 25px;
       .el-form-item {
         margin-bottom: 12px;
+        .el-icon-view:hover {
+          cursor: pointer;
+          color: #666;
+        }
       }
     }
     a {
