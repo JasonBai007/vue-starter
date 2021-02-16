@@ -41,12 +41,12 @@ export default {
   display: grid;
   grid-gap: 20px 20px;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 200px);
+  grid-template-rows: repeat(2, 230px);
   & > div {
     border-radius: 7px;
     background: #fff;
     text-align: center;
-    line-height: 200px;
+    line-height: 230px;
   }
   .item4 {
     grid-column: 1/3;

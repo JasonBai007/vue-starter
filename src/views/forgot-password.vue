@@ -81,7 +81,7 @@ export default {
   .left {
     width: 67%;
     height: 100vh;
-    background: #fafafa url("../assets/img/forgot-password.svg") no-repeat
+    background: #f8f8f8 url("../assets/img/forgot-password.svg") no-repeat
       center center / 63%;
     .logo-wrap {
       position: absolute;

@@ -108,7 +108,7 @@ export default {
   .left {
     width: 67%;
     height: 100vh;
-    background: #fafafa url("../assets/img/login-bg.svg") no-repeat center
+    background: #f8f8f8 url("../assets/img/register.svg") no-repeat center
       center / 72%;
     .logo-wrap {
       position: absolute;

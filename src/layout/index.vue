@@ -39,7 +39,7 @@ export default {
 <style lang="scss" scoped>
 .con-wrap {
   position: relative;
-  background: #f3f3f3;
+  background: #f8f8f8;
   min-height: 100vh;
   padding-left: 180px;
   transition: all 0.3s;
