@@ -23,6 +23,7 @@ router.afterEach((to, from) => {
     // 每次切换路由，先缩小光标大小到正常
     cursor.classList.remove("large-cursor");
     // 在这些类型的标签上放大假光标
+    // 虽然是NodeList类数组，但也可以使用forEach遍历
     document.querySelectorAll("a,h1,button,i").forEach((node) => {
       node.addEventListener("mouseenter", (e) => {
         cursor.classList.add("large-cursor");
@@ -60,12 +61,14 @@ export default {
     },
   },
   computed: {
-    cursorStyle() {
+    // 参数里这么写，就不用使用this了，可以提高性能
+    // 因为好像第一个参数就是this，然后解构了this
+    cursorStyle({ size, effect, bgColor }) {
       return {
-        width: this.size * 2 + "px",
-        height: this.size * 2 + "px",
-        mixBlendMode: this.effect,
-        background: this.bgColor,
+        width: size * 2 + "px",
+        height: size * 2 + "px",
+        mixBlendMode: effect,
+        background: bgColor,
       };
     },
   },
