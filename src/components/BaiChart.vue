@@ -1,11 +1,11 @@
 <template>
   <div class="chartWrap">
     <!-- 这里是要渲染的图表 -->
-    <div :id="chartId" style="height:380px;"></div>
+    <div :id="chartId"></div>
   </div>
 </template>
 <script>
-// 已在html里引入了echarts最新版CDN
+import * as echarts from "echarts";
 export default {
   name: "baiChart",
   myChart: null,
@@ -17,10 +17,6 @@ export default {
     chartId() {
       return Math.random().toString(36).substr(2);
     },
-    // 图表主题色
-    colorArr() {
-      return this.$store.state.common.chartTheme;
-    },
   },
   mounted() {
     this.init();
@@ -31,16 +27,25 @@ export default {
   },
   methods: {
     init() {
+      this.setDomHeight();
       this.myChart = echarts.init(document.getElementById(this.chartId));
       // 监听窗口变化，一旦变化，立刻调用echarts的API，进行重新渲染
       window.onresize = () => {
+        this.setDomHeight();
         this.myChart.resize();
       };
     },
+    // 动态设置容器高度
+    setDomHeight() {
+      document.getElementById(this.chartId).style.height =
+        document.querySelector(".chartWrap").clientHeight + "px";
+    },
     renderChart(chartData) {
-      let _options = Object.assign(
+      const _options = Object.assign(
         {
-          color: this.colorArr,
+          // title: {
+          //   text: "your title",
+          // },
         },
         chartData // 直接使用props中的chartData渲染图表
       );
@@ -51,7 +56,8 @@ export default {
 };
 </script>
 <style lang="scss">
-#myChartWrap {
+.chartWrap {
   width: 100%;
+  height: 100%;
 }
 </style>

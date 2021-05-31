@@ -23,7 +23,7 @@
       <el-row>
         <el-col :span="24">
           <el-card class="box-card">
-            <div class="animated fadeIn">
+            <div class="_wrap">
               <!-- 图表组件 -->
               <bai-chart ref="weatherChart"></bai-chart>
             </div>
@@ -176,6 +176,10 @@ export default {
 
 .chart-wrap {
   margin-top: 20px;
+}
+
+._wrap {
+  height: calc(100vh - 380px);
 }
 
 .el-card__header {
