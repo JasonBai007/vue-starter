@@ -124,7 +124,7 @@ export default {
           data: ["最高气温", "最低气温"],
         },
         xAxis: {
-          data: data.map((v) => v.date),
+          data: data.map((v) => v.date.substr(-3, 3)),
         },
         yAxis: {
           type: "value",
