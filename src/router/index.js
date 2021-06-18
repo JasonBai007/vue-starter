@@ -82,6 +82,14 @@ const router = new Router({
           component: () => import("@/layout/nested"),
           children: [
             {
+              path: "pannel",
+              name: "pannel",
+              meta: {
+                title: "灵魂面板",
+              },
+              component: () => import("@/views/pannel"),
+            },
+            {
               path: "blank",
               name: "blank",
               meta: {
