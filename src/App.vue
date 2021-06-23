@@ -72,4 +72,19 @@ body {
 .el-button--primary:hover {
   box-shadow: 0 8px 25px -8px #7367f0;
 }
+
+// 全局设置滚动条样式
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #535353;
+}
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  background: #ededed;
+}
 </style>
