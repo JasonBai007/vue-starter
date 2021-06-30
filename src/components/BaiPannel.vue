@@ -14,8 +14,6 @@
       <!-- body slot -->
       <slot name="body">Your body</slot>
     </div>
-    <!-- 拉伸按钮 -->
-    <div class="control" @mousedown="scale" v-show="!isFold"></div>
   </div>
 </template>
 
@@ -103,37 +101,6 @@ export default {
         document.removeEventListener("mousemove", null);
       });
     },
-    // 悬浮框拉伸事件
-    scale(e) {
-      let isDown = true;
-      let parent = e.target.parentNode;
-      // 按下时，获得悬浮框整体的宽高
-      let w = parent.offsetWidth;
-      let h = parent.offsetHeight;
-      let cX = e.clientX;
-      let cY = e.clientY;
-      // 必须为document绑定事件，否则容易中断
-      document.addEventListener("mousemove", (e) => {
-        if (isDown) {
-          if (e.clientX - cX + w > 200) {
-            // 新位置悬浮框的宽度 = 实际x轴移动距离（e.clientX - cX）+ 原始宽度
-            parent.style.width = e.clientX - cX + w + "px";
-          } else {
-            parent.style.width = 200 + "px";
-          }
-          if (e.clientY - cY + h > 100) {
-            // 同上
-            parent.style.height = e.clientY - cY + h + "px";
-          } else {
-            parent.style.height = 100 + "px";
-          }
-        }
-      });
-      document.addEventListener("mouseup", (e) => {
-        isDown = false;
-        document.removeEventListener("mousemove", null);
-      });
-    },
   },
 };
 </script>
@@ -141,13 +108,16 @@ export default {
 <style scoped>
 .pannel {
   width: 200px;
+  min-width: 200px;
+  min-height: 38px;
   box-sizing: border-box;
   position: absolute;
   top: 0;
   left: 0;
   border-radius: 5px;
   overflow: hidden;
-  box-shadow: 2px 2px 5px #ccc;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  resize: both;
 }
 .pannel.fold {
   height: 38px !important;
@@ -157,7 +127,7 @@ export default {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  background: #909399;
+  background: hsl(220, 4%, 58%);
   color: #fff;
 }
 .pannel-title:hover {

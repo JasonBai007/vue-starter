@@ -40,10 +40,9 @@ export default {
 
 <style lang="scss" scoped>
 .pannels-wrap {
-  height: calc(100vh - 200px);
+  height: calc(100vh - 190px);
   overflow: hidden;
-  background: linear-gradient(#fff 50%, #d9ecff 50%);
-  background-size: 50px 50px;
+  background: #e3e1fc;
   position: relative;
   border-radius: 5px;
 }
