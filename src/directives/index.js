@@ -47,24 +47,55 @@ Vue.directive('count', {
   }
 });
 
-// 实现拖拽功能
+// 拖拽功能
 Vue.directive('drag', {
-  bind(el, binding) {
-    el.style.position = 'fixed';
-    el.style.left = binding.value[0];
-    el.style.top = binding.value[1];
-  },
-  inserted(el, binding) {
-    el.onmousedown = e => {
-      let gapX = el.getBoundingClientRect().width / 2
-      let gapY = el.getBoundingClientRect().height / 2
-      document.onmousemove = e => {
-        el.style.left = `${e.clientX - gapX}px`;
-        el.style.top = `${e.clientY - gapY}px`;
+  inserted(el) {
+    el.onmousedown = (e) => {
+      let innerX = e.clientX - el.parentNode.offsetLeft;
+      let innerY = e.clientY - el.parentNode.offsetTop;
+      document.onmousemove = (e) => {
+        el.parentNode.style.left = e.clientX - innerX + 'px';
+        el.parentNode.style.top = e.clientY - innerY + 'px';
+      }
+      document.onmouseup = () => {
+        document.onmousemove = null;
+        document.onmouseup = null;
+      }
+      // 防止黏连
+      return false;
+    }
+  }
+})
+
+// 切换全屏功能
+// 示例：<i class="el-icon-full-screen" v-fullscreen="'.wrap'"></i>
+Vue.directive('fullscreen', {
+  inserted(el, bind) {
+    let targetDom = document.querySelector(bind.value)
+    el.onclick = (e) => {
+      let isFullscreen = targetDom.offsetHeight === window.screen.height
+      if (isFullscreen) {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.webkitCancelFullScreen) {
+          document.webkitCancelFullScreen();
+        } else if (document.mozCancelFullScreen) {
+          document.mozCancelFullScreen();
+        } else if (document.msExitFullscreen) {
+          document.msExitFullscreen();
+        }
+      } else {
+        if (targetDom.requestFullscreen) {
+          targetDom.requestFullscreen();
+        } else if (targetDom.webkitRequestFullScreen) {
+          targetDom.webkitRequestFullScreen();
+        } else if (targetDom.mozRequestFullScreen) {
+          targetDom.mozRequestFullScreen();
+        } else if (targetDom.msRequestFullscreen) {
+          targetDom.msRequestFullscreen();
+        }
       }
     }
-    el.onmouseup = e => {
-      document.onmousemove = null;
-    }    
+
   }
-});
+})
