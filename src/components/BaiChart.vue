@@ -55,13 +55,13 @@ export default {
   },
   beforeDestroy() {
     // 销毁前取消监听
-    window.onresize = null;
+    window.removeEventListener("resize", null);
   },
   methods: {
     init() {
       this.myChart = echarts.init(document.getElementById(this.chartId));
       this.setContainerHeight();
-      window.onresize = this.setContainerHeight;
+      window.addEventListener("resize", this.setContainerHeight);
     },
     // 设置容器高度并重新绘制图表
     setContainerHeight() {
