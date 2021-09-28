@@ -10,6 +10,12 @@ import * as echarts from "echarts";
 export default {
   name: "baiChart",
   myChart: null,
+  props: {
+    isDebounce: {
+      typeof: Boolean,
+      default: false,
+    },
+  },
   data() {
     return {
       // 基础配置
@@ -36,11 +42,6 @@ export default {
           "#6f5553",
           "#c14089",
         ],
-        // title: {
-        //   text: "Live Signals",
-        //   left: "center",
-        //   top: 10,
-        // },
       },
     };
   },
@@ -60,11 +61,15 @@ export default {
   methods: {
     init() {
       this.myChart = echarts.init(document.getElementById(this.chartId));
-      this.setContainerHeight();
-      window.addEventListener("resize", this.setContainerHeight);
+      this.resizeChart();
+      if (this.isDebounce) {
+        window.addEventListener("resize", this.debounce(this.resizeChart, 200));
+      } else {
+        window.addEventListener("resize", this.resizeChart);
+      }
     },
-    // 设置容器高度并重新绘制图表
-    setContainerHeight() {
+    // 根据容器高度重绘图表
+    resizeChart() {
       this.myChart.resize({
         height: document.querySelector(".chartWrap").clientHeight + "px",
       });
@@ -73,6 +78,18 @@ export default {
     renderChart(chartData) {
       const _options = Object.assign({}, this.basicOptions, chartData);
       this.myChart.setOption(_options);
+    },
+    // 设置防抖
+    debounce(fn, delay) {
+      let _id = null;
+      return () => {
+        if (_id) {
+          clearTimeout(_id);
+        }
+        _id = setTimeout(() => {
+          fn();
+        }, delay);
+      };
     },
   },
 };

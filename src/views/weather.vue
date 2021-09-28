@@ -24,7 +24,7 @@
         <el-col :span="24">
           <el-card class="box-card">
             <div class="_wrap">
-              <!-- 图表组件 -->
+              <!-- 图表组件，默认关闭防抖效果，可设置开启 -->
               <bai-chart ref="weatherChart"></bai-chart>
             </div>
           </el-card>
