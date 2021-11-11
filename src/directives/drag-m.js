@@ -1,11 +1,9 @@
-import Vue from "vue";
-
 // 移动版drag指令
 // 使用示例：
 // <div class="pannel">
 //     <header v-drag-m>我是移动脑袋</header>
 // </div>
-Vue.directive("drag-m", {
+export default {
   inserted(el) {
     el.ontouchstart = (e) => {
       e.preventDefault();
@@ -44,4 +42,4 @@ Vue.directive("drag-m", {
       };
     };
   },
-});
+}

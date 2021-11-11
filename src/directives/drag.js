@@ -1,12 +1,12 @@
-import Vue from "vue";
-
 // 拖拽功能（PC端）
 // 使用示例：
 // <div class="pannel">
 //     <header v-drag>我是脑袋</header>
 // </div>
-Vue.directive("drag", {
+export default {
   inserted(el) {
+    // 首先设置拖动光标
+    el.style.cursor = 'move'
     el.onmousedown = (e) => {
       // 拖拽开始的时候，将当前浮动框层级提升到最高
       // document.querySelectorAll('.pannel').forEach(node => node.style.zIndex = 2);
@@ -25,4 +25,4 @@ Vue.directive("drag", {
       return false;
     };
   },
-});
+}

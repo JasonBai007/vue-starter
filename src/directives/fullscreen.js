@@ -1,8 +1,6 @@
-import Vue from "vue";
-
 // 切换全屏功能
 // 示例：<i class="el-icon-full-screen" v-fullscreen="'.wrap'"></i>
-Vue.directive("fullscreen", {
+export default {
   inserted(el, bind) {
     let targetDom = document.querySelector(bind.value);
     el.onclick = (e) => {
@@ -30,4 +28,4 @@ Vue.directive("fullscreen", {
       }
     };
   },
-});
+}
