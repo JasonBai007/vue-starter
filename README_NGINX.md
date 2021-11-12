@@ -117,13 +117,18 @@ server {
 
 ### 8、允许跨域访问某类请求
 
+参考：https://segmentfault.com/a/1190000012550346
+
 ```bash
 server {
-    # 匹配 api 开头的请求
-    location /api {
+    location / {
         add_header Access-Control-Allow-Origin *;
         add_header Access-Control-Allow-Methods 'GET, POST, OPTIONS';
         add_header Access-Control-Allow-Headers 'DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Authorization';
+
+        if ($request_method = 'OPTIONS') {
+            return 204;
+        }
     }
 }
 ```
