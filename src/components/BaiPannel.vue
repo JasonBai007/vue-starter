@@ -1,6 +1,6 @@
 <template>
   <div :class="pannelWrapClass">
-    <div class="pannel-title" @mousedown="move">
+    <div class="pannel-title" v-drag="'.pannel'">
       <span class="title">
         <!-- title slot -->
         <slot name="title">Your Title</slot>
@@ -61,46 +61,6 @@ export default {
     toggle() {
       this.isFold = !this.isFold;
     },
-    // 悬浮框拖动事件
-    move(e) {
-      let isDown = true;
-      let parent = e.target.parentNode;
-      // 刚按下时，悬浮框距离顶部和左边缘的距离
-      let left = parent.offsetLeft;
-      let top = parent.offsetTop;
-      let cX = e.clientX;
-      let cY = e.clientY;
-      // 拍平所有pannel的层级
-      document.querySelectorAll(".pannel").forEach((node) => {
-        node.style.zIndex = 0;
-      });
-      // 单独设置自己的层级更高
-      parent.style.zIndex = 1;
-      // 必须为document绑定事件，否则容易中断
-      document.addEventListener("mousemove", (e) => {
-        if (isDown) {
-          // 实现灵魂拖拽
-          parent.style.opacity = 0.5;
-          if (e.clientX - cX + left > 0) {
-            // 新位置距离左边缘的距离 = 实际移动距离（e.clientX - cX）+ 初始距离
-            parent.style.left = e.clientX - cX + left + "px";
-          } else {
-            parent.style.left = "0px";
-          }
-          if (e.clientY - cY + top > 0) {
-            // 同上
-            parent.style.top = e.clientY - cY + top + "px";
-          } else {
-            parent.style.top = "0px";
-          }
-        }
-      });
-      document.addEventListener("mouseup", (e) => {
-        isDown = false;
-        parent.style.opacity = 1;
-        document.removeEventListener("mousemove", null);
-      });
-    },
   },
 };
 </script>
@@ -121,6 +81,7 @@ export default {
 }
 .pannel.fold {
   height: 38px !important;
+  resize: none;
 }
 .pannel-title {
   display: flex;
