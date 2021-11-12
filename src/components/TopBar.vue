@@ -4,13 +4,16 @@
   <div id="topbar-wrap" :class="{ topCollapsed: isCollapse }">
     <el-row type="flex" justify="space-between">
       <el-col :span="12">
-        <i class="el-icon-s-fold toggle-btn" :style="iconStyle"  @click="toggleSiderBar"></i>
+        <i class="el-icon-s-fold toggle-btn" :style="iconStyle" @click="toggleSiderBar"></i>
         <campaign-select></campaign-select>
       </el-col>
       <el-col :span="12">
         <el-row type="flex" class="row-right" justify="end" style="margin-right:-15px" align="middle">
-          <el-col :span="18" class="hi">
+          <el-col :span="16" class="hi">
             <a class="animated fadeIn">Hi，{{userName}}</a>
+          </el-col>
+          <el-col :span="2">
+            <i class="el-icon-full-screen" v-fullscreen="'body'"></i>
           </el-col>
           <el-col :span="2">
             <lang-switcher></lang-switcher>
@@ -34,13 +37,13 @@ export default {
   name: "topbar",
   data() {
     return {
-      userName: localStorage.userName || ""
+      userName: localStorage.userName || "",
     };
   },
   components: {
     ColorsPicker,
     LangSwitcher,
-    CampaignSelect
+    CampaignSelect,
   },
   computed: {
     isCollapse() {
@@ -48,9 +51,9 @@ export default {
     },
     iconStyle() {
       return {
-        transform: this.isCollapse ? "rotate(180deg)" : "rotate(0deg)"
+        transform: this.isCollapse ? "rotate(180deg)" : "rotate(0deg)",
       };
-    }
+    },
   },
   mounted() {},
   methods: {
@@ -62,8 +65,8 @@ export default {
       localStorage.clear();
       localStorage.curColor = _temp;
       this.$router.push("/login");
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped lang="scss">
@@ -79,7 +82,7 @@ export default {
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
   a {
     line-height: 60px;
-  }  
+  }
   i {
     font-size: 20px;
     line-height: 60px;
