@@ -77,7 +77,7 @@ export default {
     // 绘制图表
     renderChart(chartData) {
       const _options = Object.assign({}, this.basicOptions, chartData);
-      this.myChart.setOption(_options);
+      this?.myChart.setOption(_options);
     },
     // 设置防抖
     debounce(fn, delay) {

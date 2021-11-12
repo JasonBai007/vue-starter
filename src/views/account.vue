@@ -13,12 +13,7 @@
               </el-col>
               <el-col :span="8">
                 <el-form-item label="类型">
-                  <el-select
-                    v-model="formData.type"
-                    placeholder="请选择类型"
-                    style="width:100%"
-                    clearable
-                  >
+                  <el-select v-model="formData.type" placeholder="请选择类型" style="width:100%" clearable>
                     <el-option label="射手" value="射手"></el-option>
                     <el-option label="法师" value="法师"></el-option>
                     <el-option label="辅助" value="辅助"></el-option>
@@ -52,8 +47,9 @@
         <el-table-column prop="address" label="住址"></el-table-column>
         <el-table-column prop="type" label="操作" width="150" align="center">
           <template slot-scope="scope">
-            <i class="btn el-icon-edit"></i>
-            <i class="btn el-icon-delete" @click="handleDelete(scope.row)"></i>
+            <i title="编辑" class="btn el-icon-edit"></i>
+            <i title="复制" class="btn el-icon-copy-document" v-copy="scope.row.address"></i>
+            <i title="删除" class="btn el-icon-delete" @click="handleDelete(scope.row)"></i>
           </template>
         </el-table-column>
       </el-table>
@@ -80,14 +76,14 @@ export default {
       paginationData: {
         total: 0,
         currentPage: 1,
-        pageSize: 10
+        pageSize: 10,
       },
       formData: {
         name: "",
         type: "",
-        address: ""
+        address: "",
       },
-      tableData: []
+      tableData: [],
     };
   },
   mounted() {
@@ -98,8 +94,8 @@ export default {
       let res = await this.$http.get("getTableData", {
         params: {
           currentPage: this.paginationData.currentPage,
-          pageSize: this.paginationData.pageSize
-        }
+          pageSize: this.paginationData.pageSize,
+        },
       });
       this.tableData = res.data.list;
       this.paginationData.total = res.data.total;
@@ -108,7 +104,7 @@ export default {
       this.formData = {
         name: "",
         type: "",
-        address: ""
+        address: "",
       };
     },
     handleCurrentChange(num) {
@@ -122,17 +118,17 @@ export default {
     handleDelete(obj) {
       this.$confirm(`确定要删除 ${obj.hero} ?`, "提示")
         .then(() => {
-          this.$http.delete(`list/${obj.id}`).then(res => {
+          this.$http.delete(`list/${obj.id}`).then((res) => {
             this.$message({
               type: "success",
-              message: "Success!"
+              message: "Success!",
             });
             this.getData();
           });
         })
         .catch(() => {});
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -155,10 +151,14 @@ export default {
     cursor: pointer;
   }
 }
-.btn:nth-child(1) {
+.btn.el-icon-edit {
   color: #409eff;
 }
-.btn:nth-child(2) {
+.btn.el-icon-copy-document {
+  color: #67c23a;
+}
+
+.btn.el-icon-delete {
   color: #f56c6c;
 }
 

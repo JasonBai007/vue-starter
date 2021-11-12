@@ -5,9 +5,11 @@ import count from './count.js'
 import fullscreen from './fullscreen.js'
 import drag from './drag.js'
 import dragM from './drag-m.js'
+import copy from './copy.js'
 
 Vue.directive('title', title)
 Vue.directive('count', count)
 Vue.directive('fullscreen', fullscreen)
 Vue.directive('drag', drag)
 Vue.directive('drag-m', dragM)
+Vue.directive('copy', copy)
