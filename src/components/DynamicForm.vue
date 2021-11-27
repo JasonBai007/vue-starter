@@ -27,8 +27,8 @@
 // formData: {
 //   title:'',
 //   rows:[
-//     [{一行一条数据}],
-//     [{一条数据},{另外一条数据}]
+//     [{一行一条数据}], 
+//     [{一条数据},{另外一条数据}] 也就是4列
 //   ]
 // }
 export default {
@@ -58,7 +58,7 @@ export default {
         return {
           colNum: 4, // 默认4列，可以是6列、8列 ...
           labelColor: "#ecf5ff",
-          labelWidth: "10%",
+          labelWidth: "15%",
         };
       },
     },
@@ -86,7 +86,8 @@ export default {
 h2 {
   text-align: center;
   font-size: 18px;
-  font-weight: normal;
+  /* font-weight: normal; */
+  color: #333;
 }
 .d-table {
   border-collapse: collapse;
