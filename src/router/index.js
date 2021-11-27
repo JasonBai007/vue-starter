@@ -90,6 +90,14 @@ const router = new Router({
               component: () => import("@/views/pannel"),
             },
             {
+              path: "formpage",
+              name: "formpage",
+              meta: {
+                title: "动态表单",
+              },
+              component: () => import("@/views/formpage"),
+            },
+            {
               path: "blank",
               name: "blank",
               meta: {
