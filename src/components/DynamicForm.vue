@@ -21,6 +21,16 @@
 </template>
 
 <script>
+// 使用示例：
+// <dynamic-form :formData="formData" :formConfig="formConfig"></dynamic-form>
+// 其中：
+// formData: {
+//   title:'',
+//   rows:[
+//     [{一行一条数据}],
+//     [{一条数据},{另外一条数据}]
+//   ]
+// }
 export default {
   name: "dynamic-form",
   props: {
@@ -28,7 +38,7 @@ export default {
       type: Object,
       default: () => {
         return {
-          title: "",
+          title: "", // 默认不展示标题
           rows: [
             // [
             //   {
@@ -46,7 +56,7 @@ export default {
       type: Object,
       default: () => {
         return {
-          colNum: 4,
+          colNum: 4, // 默认4列，可以是6列、8列 ...
           labelColor: "#ecf5ff",
           labelWidth: "10%",
         };
