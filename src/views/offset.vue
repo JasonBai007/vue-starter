@@ -100,6 +100,7 @@ export default {
             type: "inside",
             start: 95,
             end: 100,
+            zoomLock: true,
           },
           {
             show: true,
@@ -107,6 +108,8 @@ export default {
             top: "92%",
             start: 95,
             end: 100,
+            zoomLock: true,
+            brushSelect: false,
           },
         ],
         series: [
