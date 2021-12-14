@@ -60,7 +60,7 @@ export default {
   },
   methods: {
     init() {
-      this.myChart = echarts.init(document.getElementById(this.chartId));
+      this.myChart = echarts.init(document.getElementById(this.chartId),'dark');
       this.resizeChart();
       if (this.isDebounce) {
         window.addEventListener("resize", this.debounce(this.resizeChart, 200));

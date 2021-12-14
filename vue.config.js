@@ -9,7 +9,7 @@ const CompressionPlugin = require('compression-webpack-plugin')
 
 module.exports = {
   /* publicPath默认是/，部署前根据远端路径进行调整 */
-  // publicPath: process.env.NODE_ENV === "production" ? "/vue-starter/" : "/",
+  publicPath: process.env.NODE_ENV === "production" ? "/vue-starter/" : "/",
   productionSourceMap: false,
   devServer: {
     host: '0.0.0.0',

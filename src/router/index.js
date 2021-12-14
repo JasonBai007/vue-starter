@@ -98,6 +98,14 @@ const router = new Router({
               component: () => import("@/views/formpage"),
             },
             {
+              path: "offset",
+              name: "offset",
+              meta: {
+                title: "偏移量",
+              },
+              component: () => import("@/views/offset"),
+            },
+            {
               path: "blank",
               name: "blank",
               meta: {

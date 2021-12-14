@@ -32,6 +32,7 @@
         </template>
         <el-menu-item index="/others/pannel">Pannel</el-menu-item>
         <el-menu-item index="/others/formpage">FormPage</el-menu-item>
+        <el-menu-item index="/others/offset">Offset</el-menu-item>
         <el-menu-item index="/others/blank">Blank</el-menu-item>
         <el-menu-item index="/others/coming">Coming</el-menu-item>
         <el-menu-item index="/401">401</el-menu-item>
@@ -45,7 +46,7 @@ export default {
   data() {
     return {
       isMusicOn: false,
-      menu: localStorage.menu ? JSON.parse(localStorage.menu) : []
+      menu: localStorage.menu ? JSON.parse(localStorage.menu) : [],
     };
   },
   computed: {
@@ -54,10 +55,10 @@ export default {
     },
     langType() {
       return this.$i18n.locale;
-    }
+    },
   },
   created() {},
-  methods: {}
+  methods: {},
 };
 </script>
 <style scoped lang="scss">
