@@ -106,6 +106,14 @@ const router = new Router({
               component: () => import("@/views/offset"),
             },
             {
+              path: "videos",
+              name: "videos",
+              meta: {
+                title: "录像与直播",
+              },
+              component: () => import("@/views/videos"),
+            },
+            {
               path: "blank",
               name: "blank",
               meta: {
