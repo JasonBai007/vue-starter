@@ -12,8 +12,12 @@ export default {
   myChart: null,
   props: {
     isDebounce: {
-      typeof: Boolean,
+      type: Boolean,
       default: false,
+    },
+    theme: {
+      type: String,
+      default: "",
     },
   },
   data() {
@@ -60,7 +64,10 @@ export default {
   },
   methods: {
     init() {
-      this.myChart = echarts.init(document.getElementById(this.chartId),'dark');
+      this.myChart = echarts.init(
+        document.getElementById(this.chartId),
+        this.theme
+      );
       this.resizeChart();
       if (this.isDebounce) {
         window.addEventListener("resize", this.debounce(this.resizeChart, 200));

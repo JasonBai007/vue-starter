@@ -83,12 +83,17 @@ export default {
     Login(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          this.$http.post("login", this.form).then((res) => {
-            localStorage.userName = res.data.userName;
-            localStorage.userId = res.data.userId;
-            localStorage.token = res.data.token;
-            this.$router.push("/dashboard");
-          });
+          // 由于取消使用Mock.js，所以注释
+          // this.$http.post("login", this.form).then((res) => {
+          //   localStorage.userName = res.data.userName;
+          //   localStorage.userId = res.data.userId;
+          //   localStorage.token = res.data.token;
+          //   this.$router.push("/dashboard");
+          // });
+          localStorage.userName = "Jason";
+          localStorage.userId = "id";
+          localStorage.token = "token";
+          this.$router.push("/dashboard");
         } else {
           return false;
         }

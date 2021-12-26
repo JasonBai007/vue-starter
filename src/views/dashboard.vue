@@ -28,8 +28,9 @@ export default {
   },
   methods: {
     async getKeyIndexData() {
-      let res = await this.$http.get("getKeyIndexData");
-      this.keyIndexArr = res.data;
+      // let res = await this.$http.get("getKeyIndexData");
+      // this.keyIndexArr = res.data;
+      this.keyIndexArr = [4645, 6448, 5462, 3154, 2648, 2144];
     },
   },
 };

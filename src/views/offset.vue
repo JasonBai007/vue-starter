@@ -1,7 +1,7 @@
 <template>
   <div class="offset-wrap">
     <!-- 图表组件，默认关闭防抖效果，可设置开启 -->
-    <bai-chart ref="myChart"></bai-chart>
+    <bai-chart ref="myChart" theme="dark"></bai-chart>
   </div>
 </template>
 

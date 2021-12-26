@@ -18,7 +18,8 @@ import '@/filters'
 
 // 在入口处引入模拟的假数据
 if (process.env.VUE_APP_MOCK === '1') {
-  require('@/mock')
+  // 与直播流冲突，就暂时注释了
+  // require('@/mock')
 }
 
 // 下面几行代码可以实现：生产环境中不引入mock假数据

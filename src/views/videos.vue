@@ -1,20 +1,34 @@
 <template>
   <div class="videos-wrap">
     <el-card class="box-card">
-      <el-row>
-        <el-col :span="12">直播</el-col>
-        <el-col :span="12">录像</el-col>
+      <el-row :gutter="10">
+        <el-col :span="12">
+          <h3>CCTV-1</h3>
+          <el-alert title="Mock.js会拦截直播请求，所以这个项目注释了mock.js" type="warning"></el-alert>
+          <br />
+          <bai-live :liveConfig="liveConfig"></bai-live>
+        </el-col>
+        <el-col :span="12">
+          <h3>Camera</h3>
+        </el-col>
       </el-row>
     </el-card>
   </div>
 </template>
 
 <script>
+import BaiLive from "@/components/BaiLive";
 export default {
   name: "videos",
-  components: {},
+  components: { BaiLive },
   data() {
-    return {};
+    return {
+      liveConfig: {
+        type: "application/x-mpegURL",
+        origin: "http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/index.m3u8",
+        autoPlay: false,
+      },
+    };
   },
   mounted() {},
   computed: {},
@@ -23,6 +37,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+h3 {
+  margin-top: 0;
+}
 </style>
 
 
