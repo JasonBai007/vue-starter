@@ -145,12 +145,20 @@ export default {
       let vDom = document.querySelector("#camera");
       let w = parseInt(getComputedStyle(vDom).width);
       let h = parseInt(getComputedStyle(vDom).height);
+      // 手动创建一个canvas元素
       let canvas = document.createElement("canvas");
-      canvas.style.width = w + "px";
-      canvas.style.height = h + "px";
+      // 这么设置宽高才生效
+      canvas.width = w;
+      canvas.height = h;
+      // 拿到画布
       let ctx = canvas.getContext("2d");
+      // 先水平翻转画布
+      ctx.translate(canvas.width, 0);
+      ctx.scale(-1, 1);
+      // 然后再画布上绘制视频
       ctx.drawImage(vDom, 0, 0, w, h);
-      let imgUrl = canvas.toDataURL();
+      // 把当前视频帧变成data url
+      let imgUrl = canvas.toDataURL("image/jpg");
       this.download(imgUrl);
     },
     download(url) {
@@ -207,7 +215,7 @@ export default {
 #camera {
   width: 100%;
   transform: rotateY(180deg);
-  aspect-ratio: 1.784;
+  // aspect-ratio: 1.784;
   background: #000;
 }
 .func-bar {
