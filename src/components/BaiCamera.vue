@@ -8,7 +8,7 @@
       <el-button type="primary" @click="shot" size="small" icon="el-icon-camera-solid">Snap Shot</el-button>
     </div>
     <!-- 摄像头对应的视频 -->
-    <video src id="camera" poster="../assets/img/login.png"></video>
+    <video src id="camera" poster="../assets/img/poster.jpg"></video>
     <!-- 视频录制和打开栏 -->
     <!-- <div class="record-bar">
       <div v-if="isRecord">
