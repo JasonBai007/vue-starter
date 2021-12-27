@@ -4,7 +4,7 @@
       <el-row :gutter="10">
         <el-col :span="12">
           <h3>CCTV-1</h3>
-          <el-alert title="Mock.js会拦截直播请求，所以这个项目注释了mock.js" type="warning"></el-alert>
+          <el-alert title="Mock.js会导致直播请求的responseType乱码，所以暂时注释了mock.js" type="warning"></el-alert>
           <br />
           <bai-live :liveConfig="liveConfig"></bai-live>
         </el-col>

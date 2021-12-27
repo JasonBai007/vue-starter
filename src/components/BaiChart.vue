@@ -17,7 +17,7 @@ export default {
     },
     theme: {
       type: String,
-      default: "",
+      default: "", //默认白色主题，可以设置成dark主题
     },
   },
   data() {

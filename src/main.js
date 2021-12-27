@@ -24,6 +24,7 @@ if (process.env.VUE_APP_MOCK === '1') {
 
 // 下面几行代码可以实现：生产环境中不引入mock假数据
 // if (process.env.NODE_ENV === 'development') {
+// Mock.js会导致直播请求的responseType乱码，所以暂时注释了mock.js
 //   require('@/mock')
 // }
 

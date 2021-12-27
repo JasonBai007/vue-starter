@@ -8,9 +8,10 @@
       <!-- 面包屑 -->
       <bread v-if="$route.path !== '/dashboard'" />
       <!-- 右侧主体页面部分 -->
-      <transition name="slide-fade">
+      <!-- 过渡效果会影响图表的高度渲染 -->
+      <!-- <transition name="slide-fade"> -->
         <router-view class="page-component-wrap"></router-view>
-      </transition>
+      <!-- </transition> -->
       <!-- 页脚 -->
       <Footer />
     </div>
