@@ -10,6 +10,7 @@
         </el-col>
         <el-col :span="12">
           <h3>Camera</h3>
+          <bai-camera></bai-camera>
         </el-col>
       </el-row>
     </el-card>
@@ -18,9 +19,10 @@
 
 <script>
 import BaiLive from "@/components/BaiLive";
+import BaiCamera from "@/components/BaiCamera";
 export default {
   name: "videos",
-  components: { BaiLive },
+  components: { BaiLive, BaiCamera },
   data() {
     return {
       liveConfig: {

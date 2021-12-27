@@ -109,7 +109,7 @@ const router = new Router({
               path: "videos",
               name: "videos",
               meta: {
-                title: "录像与直播",
+                title: "直播与录像",
               },
               component: () => import("@/views/videos"),
             },
