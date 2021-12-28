@@ -3,6 +3,7 @@
 // 引入IE兼容垫片
 import "babel-polyfill";
 import Vue from "vue";
+import mockjs from 'mockjs'
 import App from "./App";
 import router from "./router";
 import i18n from "./lang";
@@ -15,18 +16,6 @@ Vue.prototype.$http = http;
 
 // 引入全局过滤器
 import '@/filters'
-
-// 在入口处引入模拟的假数据
-if (process.env.VUE_APP_MOCK === '1') {
-  // 与直播流冲突，就暂时注释了
-  // require('@/mock')
-}
-
-// 下面几行代码可以实现：生产环境中不引入mock假数据
-// if (process.env.NODE_ENV === 'development') {
-// Mock.js会导致直播请求的responseType乱码，所以暂时注释了mock.js
-//   require('@/mock')
-// }
 
 // 引入动画样式库
 import animate from "animate.css";
@@ -62,6 +51,9 @@ Vue.use(VueVirtualScroller)
 
 // 绑定中央事件总线
 Vue.prototype.$bus = new Vue();
+
+// 绑定mockjs
+Vue.prototype.$mock = mockjs
 
 // 阻止启动生产消息，否则会在控制台显示生产模式的消息
 Vue.config.productionTip = false;

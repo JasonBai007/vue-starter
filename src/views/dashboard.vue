@@ -30,7 +30,12 @@ export default {
     async getKeyIndexData() {
       // let res = await this.$http.get("getKeyIndexData");
       // this.keyIndexArr = res.data;
-      this.keyIndexArr = [4645, 6448, 5462, 3154, 2648, 2144];
+      this.keyIndexArr = Array.from({ length: 6 }).map(() => {
+        return this.$mock.mock({
+          num: "@integer(1000,10000)",
+          title: "@cname",
+        });
+      });
     },
   },
 };
