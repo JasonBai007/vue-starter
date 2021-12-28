@@ -44,6 +44,10 @@ export default {
         audio: true,
         video: {
           deviceId: "", //摄像头ID
+          // width: 627,
+          // height: 353,
+          // facingMode: "user", //强制使用前置摄像头
+          // facingMode: "environment", //强制使用后置摄像头
         },
       },
       recorder: null, //视频记录者
@@ -60,6 +64,8 @@ export default {
       // getUserMedia()的使用前提条件是：https协议，或localhost地址才可以
       // 参考文章：
       // https://www.freesion.com/article/7962844114/
+      // MDN说明文档：
+      // https://developer.mozilla.org/zh-CN/docs/Web/API/MediaDevices/getUserMedia
       navigator.mediaDevices
         .getUserMedia({ audio: true, video: true })
         .then(() => {
