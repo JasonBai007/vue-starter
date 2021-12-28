@@ -49,6 +49,7 @@ yarn deploy
 - Sass
 - MockJS
 - Yarn
+- video.js (视频直播插件)
 
 ## Notes
 
@@ -62,3 +63,7 @@ yarn deploy
 8. 部署前，先修改 vue.config.js 里面的配置项 publicPath。
 9. 默认开发模式下，接口请求被 mock.js 拦截，可以修改/src/mock/modules/下面的文件。
 10. .env.* 文件中的环境变量控制是否使用 mock 数据。
+11. mock.js暂时被绑定到vue原型上了
+12. 调用设备摄像头需要先争取用户同意，然后才能获得摄像头列表
+13. 在https协议或localhost下，才可以调用摄像头
+14. CCTV-1直播链接不支持https协议，需要部署在http协议下

@@ -91,14 +91,26 @@ export default {
   },
   methods: {
     async getData() {
-      let res = await this.$http.get("getTableData", {
-        params: {
-          currentPage: this.paginationData.currentPage,
-          pageSize: this.paginationData.pageSize,
-        },
+      // let res = await this.$http.get("getTableData", {
+      //   params: {
+      //     currentPage: this.paginationData.currentPage,
+      //     pageSize: this.paginationData.pageSize,
+      //   },
+      // });
+      // this.tableData = res.data.list;
+      // this.paginationData.total = res.data.total;
+      this.tableData = Array.from({ length: 10 }, () => {
+        return this.$mock.mock({
+          id: "@increment",
+          hero: "@pick(['甄姬','后裔','蔡文姬'])",
+          date: "@date",
+          province: "@province",
+          city: "@city",
+          address: "@csentence",
+          type: "@pick(['法师','射手','辅助'])",
+        });
       });
-      this.tableData = res.data.list;
-      this.paginationData.total = res.data.total;
+      this.paginationData.total = 10;
     },
     resetForm() {
       this.formData = {

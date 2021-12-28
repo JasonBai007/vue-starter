@@ -10,18 +10,34 @@ export default {
   data() {
     return {
       options: [],
-      value: ""
+      value: "",
     };
   },
   mounted() {
-    // this.getCampaignList();
+    this.getCampaignList();
   },
   methods: {
     // async getCampaignList() {
     //   const res = await this.$http.get("campaign");
     //   this.options = res.data;
     // }
-  }
+    async getCampaignList() {
+      this.options = [
+        {
+          id: 1,
+          name: "大中华区促销活动",
+        },
+        {
+          id: 2,
+          name: "北美促销活动",
+        },
+        {
+          id: 3,
+          name: "东南亚促销活动",
+        },
+      ];
+    },
+  },
 };
 </script>
 
