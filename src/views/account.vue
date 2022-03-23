@@ -31,7 +31,7 @@
         <el-col :span="6">
           <el-button @click="resetForm" size="small">重置</el-button>
           <el-button type="primary" size="small" icon="el-icon-search" @click="getData">搜索</el-button>
-          <el-button type="primary" size="small" icon="el-icon-plus" style="float:right">新建</el-button>
+          <el-button type="primary" size="small" icon="el-icon-plus" style="float:right" @click="add">新建</el-button>
         </el-col>
       </el-row>
     </el-card>
@@ -64,13 +64,15 @@
         ></el-pagination>
       </div>
     </el-card>
+    <bai-modal ref="myModal"></bai-modal>
   </div>
 </template>
 
 <script>
+import BaiModal from "../components/BaiModal.vue";
 export default {
   name: "account",
-  components: {},
+  components: { BaiModal },
   data() {
     return {
       paginationData: {
@@ -126,6 +128,9 @@ export default {
     handleSizeChange(num) {
       this.paginationData.pageSize = num;
       this.getData();
+    },
+    add() {
+      this.$refs.myModal.show();
     },
     handleDelete(obj) {
       this.$confirm(`确定要删除 ${obj.hero} ?`, "提示")

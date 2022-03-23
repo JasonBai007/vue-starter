@@ -1,7 +1,11 @@
 <template>
   <div class="modal-wrap">
     <el-dialog title="Your Title" :visible.sync="dialogVisible" :width="width" :top="top" :custom-class="customeClass" @opened="afterOpened">
-      <span>Your custom DOM</span>
+      <el-form label-width="100px" :model="form" :rules="rules" ref="ruleForm" size="small">
+        <el-form-item label="Name:" prop="name">
+          <el-input v-model="form.name" placeholder="Jason" clearable></el-input>
+        </el-form-item>
+      </el-form>
       <span slot="footer" class="dialog-footer">
         <el-button size="small" @click="dialogVisible = false">Cancel</el-button>
         <el-button size="small" type="primary" @click="submit">OK</el-button>
@@ -23,18 +27,28 @@ export default {
   name: "bai-modal",
   data() {
     return {
+      id: "",
+      isEdit: false,
       dialogVisible: false,
       width: "40%",
       top: "15vh",
       customeClass: "",
+      form: {
+        name: "",
+      },
+      rules: {
+        name: [{ required: true, trigger: "blur" }],
+      },
     };
   },
   methods: {
     show(editData) {
       if (editData) {
         // 如果存在编辑数据，就把数据赋值给内部变量
+        this.isEdit = true;
       } else {
         // 否则，就是单纯的新建弹框
+        this.isEdit = false;
       }
       this.dialogVisible = true;
     },
@@ -42,10 +56,28 @@ export default {
       this.dialogVisible = false;
     },
     submit() {
-      this.$http.post("submit", {}).then((res) => {});
+      this.$refs.ruleForm.validate((valid) => {
+        if (valid) {
+          alert("submit!");
+        } else {
+          console.log("error submit!!");
+          return false;
+        }
+      });
+    },
+    resetForm() {
+      this.form = {
+        name: "",
+      };
+      this.$nextTick(() => {
+        this.$refs.ruleForm.clearValidate();
+      });
     },
     afterOpened() {
       // 弹框打开后，这里请求需要用到的列表数据
+      if (!this.isEdit) {
+        this.resetForm();
+      }
     },
   },
 };
