@@ -52,7 +52,7 @@ export default {
   computed: {
     // 生成随机字符，保证每个图表实例的ID都是唯一的
     chartId() {
-      return Math.random().toString(36).substr(2);
+      return "chartId" + Math.random().toString(36).substr(2);
     },
   },
   mounted() {
@@ -78,7 +78,7 @@ export default {
     // 根据容器高度重绘图表
     resizeChart() {
       this.myChart.resize({
-        height: document.querySelector(".chartWrap").clientHeight + "px",
+        height: document.querySelector(`#${this.chartId}`).parentNode.clientHeight + "px",
       });
     },
     // 绘制图表
