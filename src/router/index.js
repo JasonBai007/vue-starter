@@ -114,6 +114,14 @@ const router = new Router({
               component: () => import("@/views/videos"),
             },
             {
+              path: "tower",
+              name: "tower",
+              meta: {
+                title: "CSS动画",
+              },
+              component: () => import("@/views/tower"),
+            },
+            {
               path: "blank",
               name: "blank",
               meta: {
