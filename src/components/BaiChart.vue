@@ -78,7 +78,7 @@ export default {
     // 根据容器高度重绘图表
     resizeChart() {
       this.myChart.resize({
-        height: document.querySelector(`#${this.chartId}`).parentNode.clientHeight + "px",
+        height: this.myChart.getDom().parentNode.clientHeight + "px",
       });
     },
     // 绘制图表
