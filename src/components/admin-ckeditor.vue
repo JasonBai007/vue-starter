@@ -1,5 +1,5 @@
 <template>
-    <div class="admin-ckeditor">
+    <div class="admin-ckeditor" :style="{ '--ckHeight': height }">
         <div :id="domId"></div>
     </div>
 </template>
@@ -12,11 +12,20 @@
 // this.$refs.xxx.curEditor.setData('your content')
 
 // Using this component with v-model:
-// <ckEditor v-model="editorData"></ckEditor>
+// <ckEditor v-model="editorData" height="400px"></ckEditor>
 
 export default {
     name: 'vc-ckeditor',
-    props: ['value'],  // for v-model use
+    props: {
+        value: {
+            type: String,
+            default: ''
+        },
+        height: {
+            type: String,
+            default: '400px'
+        }
+    },
     data() {
         return {
             domId: `cke${Date.now()}`,
@@ -28,7 +37,7 @@ export default {
                         'undo', 'redo',
                         '|', 'heading',
                         '|', 'bold', 'italic', 'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor',
-                        '|', 'alignment', 'bulletedList', 'numberedList', 'outdent', 'indent',
+                        '|', 'lineHeight', 'alignment', 'bulletedList', 'numberedList', 'outdent', 'indent',
                         '|', 'blockQuote', 'link', 'horizontalLine', 'insertTable', 'sourceEditing',
                     ],
                     shouldNotGroupWhenFull: false
@@ -202,15 +211,20 @@ export default {
 }
 
 .admin-ckeditor::v-deep .ck-content {
-    height: 400px;
+    height: var(--ckHeight);
 }
 
 // 编辑框文字颜色
 .admin-ckeditor::v-deep .ck-editor__main {
     color: #000;
+    height: var(--ckHeight);
 }
 
 // 源代码编辑框样式
+.admin-ckeditor::v-deep .ck-source-editing-area {
+    min-height: var(--ckHeight);
+}
+
 .admin-ckeditor::v-deep .ck-source-editing-area textarea {
     background-color: #fff;
 }
